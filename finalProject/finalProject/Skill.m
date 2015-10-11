@@ -18,7 +18,11 @@
 }
 
 + (void)fetchAll:(void (^)(NSArray *results, NSError *error))completion {
+    
+    //create query
     PFQuery *query = [PFQuery queryWithClassName:[self parseClassName]];
+    
+    //find all objects and return them in an array
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         completion(objects, error);
     }];

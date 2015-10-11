@@ -20,4 +20,6 @@
 
 +(NSString *)parseClassName;
 
++ (void)fetchAll:(void (^)(NSArray *results, NSError *error))completion;
+
 @end
