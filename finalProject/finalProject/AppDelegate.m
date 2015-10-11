@@ -27,6 +27,7 @@
     [JournalEntry registerSubclass];
     [Skill registerSubclass];
     
+    
     //Just checking to see if we're hooked up with Parse.
     
 //    Learner *parseTestLearner = [[Learner alloc] init];
@@ -40,7 +41,34 @@
 //        }
 //    }];
     
-    //Looks good!
+//    Skill *testSkill = [[Skill alloc] init];
+//    testSkill.skillName = @"Jolene";
+//    
+//    [testSkill saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+//        if (succeeded) {
+//            NSLog(@"Object uploaded!");
+//        }else{
+//            NSLog(@"Error: %@", [error localizedDescription]);
+//        }
+//    }];
+//    
+//    JournalEntry *testEntry = [[JournalEntry alloc] init];
+//    testEntry.entryTitle = @"Cupcakes";
+//    
+//    [testEntry saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+//        if (succeeded) {
+//            NSLog(@"Object uploaded!");
+//        }else {
+//            NSLog(@"Error: %@", [error localizedDescription]);
+//        }
+//    }];
+
+    //Just more testing
+//    [Skill fetchAll:^(NSArray *results, NSError *error) {
+//        Skill *skill = results[0];
+//        NSLog(@"%@", skill.skillName);
+//    }];
+
 
     
     return YES;

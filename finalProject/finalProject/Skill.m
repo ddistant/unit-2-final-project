@@ -17,4 +17,11 @@
     return @"Skill";
 }
 
++ (void)fetchAll:(void (^)(NSArray *results, NSError *error))completion {
+    PFQuery *query = [PFQuery queryWithClassName:[self parseClassName]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        completion(objects, error);
+    }];
+}
+
 @end
