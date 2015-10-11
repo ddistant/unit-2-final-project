@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB16FA7B699FAD609D209EED"
-               BuildableName = "libBolts.a"
-               BlueprintName = "Bolts"
+               BlueprintIdentifier = "A7AC9EC586F288980F4FC0BB"
+               BuildableName = "Assets.bundle"
+               BlueprintName = "youtube-ios-player-helper-Assets"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
