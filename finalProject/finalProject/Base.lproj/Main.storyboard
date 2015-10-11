@@ -80,6 +80,9 @@
                                                 <segment title="Videos"/>
                                                 <segment title="Meetups"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="segmentedControlSelected:" destination="ipM-e0-NNu" eventType="valueChanged" id="sLl-jD-WwX"/>
+                                            </connections>
                                         </segmentedControl>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCs-fD-UVx">
                                             <rect key="frame" x="557" y="25" width="35" height="35"/>
@@ -159,9 +162,6 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="irA-I5-KyL" kind="presentation" id="d2H-VS-avp"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="rDc-IL-ive" detailTextLabel="T60-MS-Zo6" imageView="ahj-7C-KLf" style="IBUITableViewCellStyleSubtitle" id="ixv-oU-11A">
                                         <rect key="frame" x="0.0" y="268" width="600" height="44"/>
@@ -204,6 +204,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Inspiration" id="pPW-lL-4tG" userLabel="Inspiration"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="NAO-jc-gct" id="l6w-ZD-Juy"/>
                         <outlet property="tableView" destination="hnG-P6-OOM" id="Jxz-OB-UTP"/>
                     </connections>
                 </viewController>
@@ -214,7 +215,7 @@
         <!--Video Detail View Controller-->
         <scene sceneID="iWt-Sl-jdh">
             <objects>
-                <viewController id="irA-I5-KyL" customClass="VideoDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoDetailViewController" id="irA-I5-KyL" customClass="VideoDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qTw-qT-7Hj"/>
                         <viewControllerLayoutGuide type="bottom" id="YwH-6N-sVI"/>
