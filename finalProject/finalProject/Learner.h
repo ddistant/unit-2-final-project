@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "Skill.h"
 
-@interface Learner : PFObject
+@interface Learner : PFObject<PFSubclassing>
 
 @property (nonatomic) NSString *learnerName;
 @property (nonatomic) UIImage *learnerAvatar;

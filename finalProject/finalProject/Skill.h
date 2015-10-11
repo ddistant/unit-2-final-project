@@ -9,7 +9,7 @@
 #import "PFObject.h"
 #import <Parse/Parse.h>
 
-@interface Skill : PFObject
+@interface Skill : PFObject<PFSubclassing>
 
 @property (nonatomic) NSString *skillName;
 

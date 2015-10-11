@@ -22,6 +22,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [Parse setApplicationId:@"ldTa8ST6XU38mX1p8d3nRO5fAzQBYhnRP4jrShqp" clientKey:@"O7QfhjkshaasBqsybWyj4sliMeVMTbHckTaqPSm1"];
+    
+    [Learner registerSubclass];
+    [JournalEntry registerSubclass];
+    [Skill registerSubclass];
+    
+    //Just checking to see if we're hooked up with Parse.
+    
+//    Learner *parseTestLearner = [[Learner alloc] init];
+//    parseTestLearner.learnerName = @"Carla";
+//    
+//    [parseTestLearner saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (succeeded) {
+//            NSLog(@"Object uploaded!");
+//        } else {
+//            NSLog(@"Error: %@", [error localizedDescription]);
+//        }
+//    }];
+    
+    //Looks good!
 
     
     return YES;

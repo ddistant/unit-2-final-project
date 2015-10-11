@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import <UIKit/UIKit.h>
 
-@interface JournalEntry : PFObject
+@interface JournalEntry : PFObject<PFSubclassing>
 
 @property (nonatomic) NSDate *entryTimestamp;
 @property (nonatomic) NSString *entryTitle;
