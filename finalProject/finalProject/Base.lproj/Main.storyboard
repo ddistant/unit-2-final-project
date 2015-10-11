@@ -132,7 +132,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="1cl-2E-JC1" detailTextLabel="XZg-6w-csY" imageView="p3l-CG-2uJ" style="IBUITableViewCellStyleSubtitle" id="wtl-pP-JB7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InspirationCellIdentifier" textLabel="1cl-2E-JC1" detailTextLabel="XZg-6w-csY" imageView="p3l-CG-2uJ" style="IBUITableViewCellStyleSubtitle" id="wtl-pP-JB7">
                                         <rect key="frame" x="0.0" y="224" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wtl-pP-JB7" id="dfi-Jw-9fT">
@@ -203,6 +203,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Inspiration" id="pPW-lL-4tG" userLabel="Inspiration"/>
+                    <connections>
+                        <outlet property="tableView" destination="hnG-P6-OOM" id="Jxz-OB-UTP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmu-Q1-7cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -410,7 +413,7 @@
                                     </variation>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="YdH-1P-TR5" detailTextLabel="eXS-07-mvc" style="IBUITableViewCellStyleSubtitle" id="B2W-pP-zNL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="JournalCellIdentifier" textLabel="YdH-1P-TR5" detailTextLabel="eXS-07-mvc" style="IBUITableViewCellStyleSubtitle" id="B2W-pP-zNL">
                                         <rect key="frame" x="0.0" y="190" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2W-pP-zNL" id="gsp-j0-Lmf">
@@ -446,6 +449,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Journal" id="Shz-CL-F5Y" userLabel="Profile"/>
+                    <connections>
+                        <outlet property="tableView" destination="c4T-lm-OvM" id="wGi-0I-fG8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBW-rn-3ZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -477,6 +483,6 @@
         <image name="search_icon2" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HiH-xw-dnC"/>
+        <segue reference="TGW-ui-cYc"/>
     </inferredMetricsTieBreakers>
 </document>
