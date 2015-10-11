@@ -14,6 +14,9 @@
 		227CC2671BC9792200C31F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227CC2661BC9792200C31F8F /* Assets.xcassets */; };
 		227CC26A1BC9792200C31F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227CC2681BC9792200C31F8F /* LaunchScreen.storyboard */; };
 		2E4C1240B4B88ADA535632B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8234ABF4A30E2B36BAF66C1F /* libPods.a */; };
+		6B006F511BCAC82600D5CE25 /* Learner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F501BCAC82600D5CE25 /* Learner.m */; settings = {ASSET_TAGS = (); }; };
+		6B006F541BCAC83A00D5CE25 /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F531BCAC83A00D5CE25 /* Skill.m */; settings = {ASSET_TAGS = (); }; };
+		6B006F571BCAC84F00D5CE25 /* JournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F561BCAC84F00D5CE25 /* JournalEntry.m */; settings = {ASSET_TAGS = (); }; };
 		6BB4587B1BC9BF55007D6E0B /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4587A1BC9BF55007D6E0B /* WelcomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6BB4587E1BC9C04F007D6E0B /* LearnerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4587D1BC9C04F007D6E0B /* LearnerProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6BB458811BC9C096007D6E0B /* ComposePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB458801BC9C096007D6E0B /* ComposePostViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -31,6 +34,12 @@
 		227CC2661BC9792200C31F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		227CC2691BC9792200C31F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		227CC26B1BC9792200C31F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B006F4F1BCAC82600D5CE25 /* Learner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Learner.h; sourceTree = "<group>"; };
+		6B006F501BCAC82600D5CE25 /* Learner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Learner.m; sourceTree = "<group>"; };
+		6B006F521BCAC83A00D5CE25 /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skill.h; sourceTree = "<group>"; };
+		6B006F531BCAC83A00D5CE25 /* Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skill.m; sourceTree = "<group>"; };
+		6B006F551BCAC84F00D5CE25 /* JournalEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalEntry.h; sourceTree = "<group>"; };
+		6B006F561BCAC84F00D5CE25 /* JournalEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalEntry.m; sourceTree = "<group>"; };
 		6BB458791BC9BF55007D6E0B /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		6BB4587A1BC9BF55007D6E0B /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		6BB4587C1BC9C04F007D6E0B /* LearnerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnerProfileViewController.h; sourceTree = "<group>"; };
@@ -81,6 +90,12 @@
 			children = (
 				227CC25A1BC9792200C31F8F /* AppDelegate.h */,
 				227CC25B1BC9792200C31F8F /* AppDelegate.m */,
+				6B006F4F1BCAC82600D5CE25 /* Learner.h */,
+				6B006F501BCAC82600D5CE25 /* Learner.m */,
+				6B006F521BCAC83A00D5CE25 /* Skill.h */,
+				6B006F531BCAC83A00D5CE25 /* Skill.m */,
+				6B006F551BCAC84F00D5CE25 /* JournalEntry.h */,
+				6B006F561BCAC84F00D5CE25 /* JournalEntry.m */,
 				6BB458851BC9C0DA007D6E0B /* VideoDetailViewController.h */,
 				6BB458861BC9C0DA007D6E0B /* VideoDetailViewController.m */,
 				6BB458821BC9C0B9007D6E0B /* InspirationViewController.h */,
@@ -232,12 +247,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B006F511BCAC82600D5CE25 /* Learner.m in Sources */,
 				6BB458841BC9C0B9007D6E0B /* InspirationViewController.m in Sources */,
 				227CC25C1BC9792200C31F8F /* AppDelegate.m in Sources */,
 				6BB458811BC9C096007D6E0B /* ComposePostViewController.m in Sources */,
+				6B006F571BCAC84F00D5CE25 /* JournalEntry.m in Sources */,
 				6BB4587B1BC9BF55007D6E0B /* WelcomeViewController.m in Sources */,
 				6BB4587E1BC9C04F007D6E0B /* LearnerProfileViewController.m in Sources */,
 				227CC2651BC9792200C31F8F /* finalProject.xcdatamodeld in Sources */,
+				6B006F541BCAC83A00D5CE25 /* Skill.m in Sources */,
 				227CC2591BC9792200C31F8F /* main.m in Sources */,
 				6BB458871BC9C0DA007D6E0B /* VideoDetailViewController.m in Sources */,
 			);

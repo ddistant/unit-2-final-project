@@ -6,7 +6,11 @@
 //  Copyright © 2015 ddistant. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "AppDelegate.h"
+#import "Learner.h"
+#import "Skill.h"
+#import "JournalEntry.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +20,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [Parse setApplicationId:@"ldTa8ST6XU38mX1p8d3nRO5fAzQBYhnRP4jrShqp" clientKey:@"O7QfhjkshaasBqsybWyj4sliMeVMTbHckTaqPSm1"];
+
+    
     return YES;
 }
 
