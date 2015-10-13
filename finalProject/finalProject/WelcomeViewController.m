@@ -6,9 +6,17 @@
 //  Copyright © 2015 ddistant. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "WelcomeViewController.h"
+#import "LearnerProfileViewController.h"
+#import "Learner.h"
 
 @interface WelcomeViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
+@property (nonatomic) Learner *learner;
+@property (nonatomic) NSString *learnerSkill;
 
 @end
 
@@ -16,22 +24,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.learner = [[Learner alloc] init];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (IBAction)goButtonTapped:(UIButton *)sender {
+    
+    if (![self.textField.text isEqualToString:@""]) {
+        
+        self.learnerSkill = self.textField.text;
+        
+        [self segueToLearnerProfileViewControllerWith:self.learnerSkill];
+
+    }
+    
 }
-*/
+
+-(void)segueToLearnerProfileViewControllerWith: (NSString *)learnerSkill{
+    
+    UITabBarController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+    
+    LearnerProfileViewController *learnerProfileVC = (LearnerProfileViewController *)([tabBarController viewControllers][0]);
+    
+    learnerProfileVC.learner = self.learner;
+    
+    [learnerProfileVC.learner setSkillWith:self.learnerSkill];
+    
+    [learnerProfileVC.learner saveLearnerSkill];
+    
+    [self presentViewController:tabBarController animated:YES completion:nil];
+}
 
 @end

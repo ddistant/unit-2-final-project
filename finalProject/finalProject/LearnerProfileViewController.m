@@ -8,7 +8,12 @@
 
 #import "LearnerProfileViewController.h"
 
-@interface LearnerProfileViewController ()
+@interface LearnerProfileViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UIImageView *learnerProfileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *learnerUsernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *learnerSkillLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,22 +21,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    self.learner = [[Learner alloc] init];
+    
+    [self.learner loadLearnerSkill];
+    
+    [self setUpUI];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UI
+
+-(void)setUpUI{
+    
+    self.learnerSkillLabel.text = self.learner.skill.skillName;
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Table View Datasource Methods
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
 }
-*/
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    //return count of API results array
+    return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JournalCellIdentifier" forIndexPath:indexPath];
+    
+    //configure cell
+    
+    return cell;
+}
+
 
 @end

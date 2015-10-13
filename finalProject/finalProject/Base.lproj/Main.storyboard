@@ -7,7 +7,7 @@
         <!--WelcomeViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="WelcomeViewController" customClass="WelcomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="BYZ-38-t0r" userLabel="WelcomeViewController" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -32,7 +32,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="GO"/>
                                 <connections>
-                                    <segue destination="tx5-dg-vPX" kind="show" id="Veb-Vs-pKA"/>
+                                    <action selector="goButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddD-Vz-txq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -49,6 +49,9 @@
                             <constraint firstItem="bYd-wz-b6d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="y2e-qH-yVj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="bYd-wz-b6d" id="rlK-jh-9xC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,6 +83,9 @@
                                                 <segment title="Videos"/>
                                                 <segment title="Meetups"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="segmentedControlSelected:" destination="ipM-e0-NNu" eventType="valueChanged" id="sLl-jD-WwX"/>
+                                            </connections>
                                         </segmentedControl>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCs-fD-UVx">
                                             <rect key="frame" x="557" y="25" width="35" height="35"/>
@@ -132,7 +138,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="1cl-2E-JC1" detailTextLabel="XZg-6w-csY" imageView="p3l-CG-2uJ" style="IBUITableViewCellStyleSubtitle" id="wtl-pP-JB7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InspirationCellIdentifier" textLabel="1cl-2E-JC1" detailTextLabel="XZg-6w-csY" imageView="p3l-CG-2uJ" style="IBUITableViewCellStyleSubtitle" id="wtl-pP-JB7">
                                         <rect key="frame" x="0.0" y="224" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wtl-pP-JB7" id="dfi-Jw-9fT">
@@ -159,9 +165,6 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="irA-I5-KyL" kind="presentation" id="d2H-VS-avp"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="rDc-IL-ive" detailTextLabel="T60-MS-Zo6" imageView="ahj-7C-KLf" style="IBUITableViewCellStyleSubtitle" id="ixv-oU-11A">
                                         <rect key="frame" x="0.0" y="268" width="600" height="44"/>
@@ -203,6 +206,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Inspiration" id="pPW-lL-4tG" userLabel="Inspiration"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="NAO-jc-gct" id="l6w-ZD-Juy"/>
+                        <outlet property="tableView" destination="hnG-P6-OOM" id="Jxz-OB-UTP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmu-Q1-7cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -211,7 +218,7 @@
         <!--Video Detail View Controller-->
         <scene sceneID="iWt-Sl-jdh">
             <objects>
-                <viewController id="irA-I5-KyL" customClass="VideoDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoDetailViewController" id="irA-I5-KyL" customClass="VideoDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qTw-qT-7Hj"/>
                         <viewControllerLayoutGuide type="bottom" id="YwH-6N-sVI"/>
@@ -410,7 +417,11 @@
                                     </variation>
                                 </view>
                                 <prototypes>
+<<<<<<< HEAD
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="YdH-1P-TR5" detailTextLabel="eXS-07-mvc" style="IBUITableViewCellStyleSubtitle" id="B2W-pP-zNL">
+=======
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="JournalCellIdentifier" textLabel="YdH-1P-TR5" detailTextLabel="eXS-07-mvc" style="IBUITableViewCellStyleSubtitle" id="B2W-pP-zNL">
+>>>>>>> e80a734994fc9ac11e9b094f1a20f12184f595bc
                                         <rect key="frame" x="0.0" y="210" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2W-pP-zNL" id="gsp-j0-Lmf">
@@ -446,6 +457,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Journal" id="Shz-CL-F5Y" userLabel="Profile"/>
+                    <connections>
+                        <outlet property="learnerProfileImageView" destination="fzF-4S-CrD" id="XiG-Gr-SJt"/>
+                        <outlet property="learnerSkillLabel" destination="UFm-0w-aeA" id="MP2-Zl-KVy"/>
+                        <outlet property="learnerUsernameLabel" destination="nmi-dN-r6B" id="7Wh-yZ-IkP"/>
+                        <outlet property="tableView" destination="c4T-lm-OvM" id="wGi-0I-fG8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jBW-rn-3ZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -454,7 +471,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Io9-ye-p9e">
             <objects>
-                <tabBarController id="tx5-dg-vPX" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="tx5-dg-vPX" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="vke-K5-ZYz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

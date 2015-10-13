@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "Learner.h"
+#import "JournalEntry.h"
+#import "ComposePostViewController.h"
 
 @interface LearnerProfileViewController : UIViewController
+
+@property (nonatomic)Learner *learner;
 
 @end
