@@ -28,6 +28,38 @@
     [Skill registerSubclass];
     
     
+    NSLog(@"LearnerSkill: %@", [[NSUserDefaults standardUserDefaults] objectForKey:LearnerSkillKey]);
+    
+    //Check if there is a Learner skillName saved in NSUserDefaults
+    
+    //if not, RootViewController of the Storyboard is the WelcomeViewController
+    
+    //otherwise make the MainTabBarController the RootViewController of the storyboard
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:LearnerSkillKey]) {
+        
+        UIStoryboard *storyboard = self.window.rootViewController.storyboard;
+        
+        UIViewController *welcomeViewController = [storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
+        
+        self.window.rootViewController = welcomeViewController;
+        
+        [self.window makeKeyAndVisible];
+        
+    }else {
+        
+        UIStoryboard *storyboard = self.window.rootViewController.storyboard;
+        
+        UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+        
+        self.window.rootViewController = tabBarController;
+        
+        [self.window makeKeyAndVisible];
+        
+    }
+
+    
+    
     //Just checking to see if we're hooked up with Parse.
     
 //    Learner *parseTestLearner = [[Learner alloc] init];

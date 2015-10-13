@@ -6,6 +6,8 @@
 //  Copyright © 2015 ddistant. All rights reserved.
 //
 
+#define LearnerSkillKey @"LearnerSkill"
+
 #import "PFObject.h"
 #import <Parse/Parse.h>
 #import <UIKit/UIKit.h>
@@ -23,5 +25,11 @@
 + (NSString *)parseClassName;
 
 + (void)fetchAll:(void (^)(NSArray *results, NSError *error))completion;
+
+-(void)setSkillWith: (NSString *)skillName;
+
+-(void)saveLearnerSkill;
+
+-(void)loadLearnerSkill;
 
 @end

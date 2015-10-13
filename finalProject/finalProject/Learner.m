@@ -21,6 +21,26 @@
     return @"Learner";
 }
 
+
+- (id)init {
+    
+    //This overrides [[Learner alloc] init] and
+    //whenever a Learner is initialized,
+    //it will now be initialized with a Skill!
+    
+    self = [super init];
+    
+     if (self != nil) {
+         
+         self.skill = [[Skill alloc]init];
+         
+         return self;
+     }
+     else {
+         return nil;
+     }
+}
+
 +(void)fetchAll:(void (^)(NSArray *, NSError *))completion{
     
     //create query
@@ -31,6 +51,32 @@
         completion(objects, error);
     }];
 
+}
+
+-(void)setSkillWith: (NSString *)skillName{
+        
+        self.skill.skillName = skillName;
+}
+
+-(void)saveLearnerSkill{
+    
+    //create a string with the Learner's skill.skillName
+    NSString *skill = self.skill.skillName;
+    
+    //store the string in NSUserDefaults with the key: self.learnerName
+    [[NSUserDefaults standardUserDefaults] setObject:skill forKey:LearnerSkillKey];
+    
+    
+}
+
+-(void)loadLearnerSkill{
+    
+    NSString *skill = [[NSUserDefaults standardUserDefaults] objectForKey:LearnerSkillKey];
+    
+    
+    if (skill != nil) {
+        self.skill.skillName = skill;
+    }
 }
 
 @end

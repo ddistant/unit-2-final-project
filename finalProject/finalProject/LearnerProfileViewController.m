@@ -10,6 +10,9 @@
 
 @interface LearnerProfileViewController ()<UITableViewDelegate, UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UIImageView *learnerProfileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *learnerUsernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *learnerSkillLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -22,6 +25,19 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.learner = [[Learner alloc] init];
+    
+    [self.learner loadLearnerSkill];
+    
+    [self setUpUI];
+    
+}
+
+#pragma mark - UI
+
+-(void)setUpUI{
+    
+    self.learnerSkillLabel.text = self.learner.skill.skillName;
 }
 
 #pragma mark - Table View Datasource Methods
