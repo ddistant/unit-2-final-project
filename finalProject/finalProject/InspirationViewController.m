@@ -74,7 +74,20 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         NSLog(@"%@", error);
+        
     }];
+}
+
+- (void) createAlertWithTitle:(NSString *)title AndMessage:(NSString *)message {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Table View Delegate Methods
@@ -105,6 +118,10 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     }else if (self.segmentedControl.selectedSegmentIndex == 1){
         
         //return the results of the Videos API Array
+        if (self.videoSearchResults.count < 1) {
+            [self createAlertWithTitle:@"Search Error" AndMessage:@"No videos found"];
+        }
+        
         return self.videoSearchResults.count;
         
     }else {
