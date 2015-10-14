@@ -424,7 +424,11 @@
                                     </variation>
                                 </view>
                                 <prototypes>
+<<<<<<< HEAD
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="YdH-1P-TR5" detailTextLabel="eXS-07-mvc" style="IBUITableViewCellStyleSubtitle" id="B2W-pP-zNL">
+=======
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="JournalCellIdentifier" textLabel="YdH-1P-TR5" detailTextLabel="eXS-07-mvc" style="IBUITableViewCellStyleSubtitle" id="B2W-pP-zNL">
+>>>>>>> e80a734994fc9ac11e9b094f1a20f12184f595bc
                                         <rect key="frame" x="0.0" y="210" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2W-pP-zNL" id="gsp-j0-Lmf">
