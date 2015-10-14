@@ -10,4 +10,6 @@
 
 @interface InspirationViewController : UIViewController
 
+@property (nonatomic) NSMutableArray *videoSearchResults;
+
 @end

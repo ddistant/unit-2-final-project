@@ -8,6 +8,10 @@
 
 #import "InspirationViewController.h"
 #import "VideoDetailViewController.h"
+#import <AFNetworking/AFNetworking.h>
+#import "Learner.h"
+
+const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 
 @interface InspirationViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -26,6 +30,51 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [self fetchYouTubeData];
+}
+
+- (void) fetchYouTubeData {
+    /* Endpoints required
+     
+     title - video title
+     
+     description - short video description
+     
+     thumbnails - a dictionary of thumbnails
+     
+     videoID - how YouTube determines which video to play in the player
+     
+     */
+    
+    //create YouTube URL
+    
+    NSString *query = [[NSUserDefaults standardUserDefaults] objectForKey:LearnerSkillKey];
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=viewCount&q=%@&type=video&key=%@", query, YouTubeAPIKey];
+    
+    NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    //fetch data from YouTube endpoint and add to array
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager GET: encodedString parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSArray *results = responseObject[@"items"];
+        
+        self.videoSearchResults = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *result in results) {
+            
+            [self.videoSearchResults addObject:result];
+        }
+        
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 #pragma mark - Table View Delegate Methods
@@ -56,7 +105,7 @@
     }else if (self.segmentedControl.selectedSegmentIndex == 1){
         
         //return the results of the Videos API Array
-        return 10;
+        return self.videoSearchResults.count;
         
     }else {
         
@@ -85,8 +134,12 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InspirationCellIdentifier" forIndexPath:indexPath];
         
         //testing cell
-        cell.textLabel.text = @"testVideosCellTitle";
-        cell.detailTextLabel.text = @"testCellDetail";
+        cell.textLabel.text = self.videoSearchResults[indexPath.row][@"snippet"][@"title"];;
+        cell.detailTextLabel.text = self.videoSearchResults[indexPath.row][@"snippet"][@"description"];
+        NSString *imageURLString = self.videoSearchResults[indexPath.row][@"snippet"][@"thumbnails"][@"default"][@"url"];
+        NSURL *imageURL = [NSURL URLWithString:imageURLString];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        cell.imageView.image = [UIImage imageWithData:imageData];
         
         return cell;
         
@@ -120,6 +173,10 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     VideoDetailViewController *videoDetailVC = [storyboard instantiateViewControllerWithIdentifier:@"VideoDetailViewController"];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    videoDetailVC.videoID = self.videoSearchResults[indexPath.row][@"id"][@"videoId"];
     
     [self presentViewController:videoDetailVC animated:YES completion:nil];
     

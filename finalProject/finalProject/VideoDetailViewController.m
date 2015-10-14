@@ -7,8 +7,10 @@
 //
 
 #import "VideoDetailViewController.h"
+#import "YTPlayerView.h"
 
 @interface VideoDetailViewController ()
+@property (weak, nonatomic) IBOutlet YTPlayerView *playerView;
 
 @end
 
@@ -16,8 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+    [self.playerView loadWithVideoId:self.videoID];
 
 }
 
