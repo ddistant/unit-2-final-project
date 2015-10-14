@@ -22,10 +22,8 @@
 
 }
 
-- (IBAction)backButtonTapped:(UIButton *)sender {
-    
+- (IBAction)swipeToDismiss:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-
 }
 
 @end
