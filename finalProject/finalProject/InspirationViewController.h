@@ -11,5 +11,7 @@
 @interface InspirationViewController : UIViewController
 
 @property (nonatomic) NSMutableArray *videoSearchResults;
+@property (nonatomic) NSMutableArray *meetupSearchResults;
+@property (nonatomic) NSMutableArray *courseraSearchResults;
 
 @end

@@ -32,6 +32,9 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     self.tableView.dataSource = self;
     
     [self fetchYouTubeData];
+    [self fetchCourseraData];
+    [self fetchMeetupData];
+    
 }
 
 - (void) fetchYouTubeData {
@@ -77,6 +80,66 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         
     }];
 }
+- (void) fetchMeetupData {
+    
+    NSString *query = [[NSUserDefaults standardUserDefaults] objectForKey:LearnerSkillKey];
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://api.meetup.com/2/open_events?&sign=true&zip=11215&photo-host=public&topic=guitar&page=20&key=742c27514d305c6a3a72223524146c46&q=search&query=%@", query];
+    
+    NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    //fetch data from YouTube endpoint and add to array
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager GET: encodedString parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSArray *results = responseObject[@"results"];
+        
+        self.meetupSearchResults = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *result in results) {
+            
+            [self.meetupSearchResults addObject:result];
+        }
+        
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+        
+    }];
+}
+- (void) fetchCourseraData {
+       
+    NSString *query = [[NSUserDefaults standardUserDefaults] objectForKey:LearnerSkillKey];
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://api.coursera.org/api/catalog.v1/courses?fields=smallIcon,shortDescription,name&q=search&query=%@", query];
+    
+    NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    //fetch data from YouTube endpoint and add to array
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    [manager GET: encodedString parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+        NSArray *results = responseObject[@"elements"];
+        
+        self.courseraSearchResults = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *result in results) {
+            
+            [self.courseraSearchResults addObject:result];
+        }
+        
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+        
+    }];
+}
 
 - (void) createAlertWithTitle:(NSString *)title AndMessage:(NSString *)message {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
@@ -111,10 +174,12 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (self.segmentedControl.selectedSegmentIndex == 0) {
-        
+        if (self.courseraSearchResults.count < 1) {
+            [self createAlertWithTitle:@"Search Error" AndMessage:@"No tutorials found"];
+        }
         //return count of Tutorials API Array
-        return 10;
-        
+        return  self.courseraSearchResults.count;
+                
     }else if (self.segmentedControl.selectedSegmentIndex == 1){
         
         //return the results of the Videos API Array
@@ -125,9 +190,11 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         return self.videoSearchResults.count;
         
     }else {
-        
+        if (self.meetupSearchResults.count < 1) {
+            [self createAlertWithTitle:@"Search Error" AndMessage:@"No meetups found"];
+        }
         //return count of MeetUps API results array
-        return 10;
+        return self.meetupSearchResults.count;
     }
 }
 
@@ -139,8 +206,18 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InspirationCellIdentifier" forIndexPath:indexPath];
         
         //testing cell
-        cell.textLabel.text = @"testTutorialsCellTitle";
-        cell.detailTextLabel.text = @"testCellDetail";
+        cell.textLabel.text = self.courseraSearchResults[indexPath.row][@"name"];
+        cell.detailTextLabel.text = self.courseraSearchResults[indexPath.row][@"shortDescription"];
+        
+        NSString *imageURLString = self.courseraSearchResults[indexPath.row][@"smallIcon"];
+//        NSURL *imageURL = [NSURL URLWithString:imageURLString];
+//        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURLString]]];
+//        cell.imageView.image = [UIImage imageWithContentsOfFile:imageURLString];
+//        
+        
+
+
         
         return cell;
        
@@ -165,9 +242,9 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         //replace with custom Meet-Ups cell
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InspirationCellIdentifier" forIndexPath:indexPath];
         
-        //testing cell
-        cell.textLabel.text = @"testMeet-UpsCellTitle";
-        cell.detailTextLabel.text = @"testCellDetail";
+        //cell
+        cell.textLabel.text = self.meetupSearchResults[indexPath.row][@"name"];
+        cell.detailTextLabel.text = self.meetupSearchResults[indexPath.row][@"description"];
         
         return cell;
     }
