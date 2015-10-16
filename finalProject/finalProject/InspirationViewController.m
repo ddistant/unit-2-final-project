@@ -11,6 +11,8 @@
 #import "InspirationViewController.h"
 #import "VideoDetailViewController.h"
 #import "Learner.h"
+#import "CourseResult.h"
+#import "CourseTableViewCell.h"
 #import "MeetUpResult.h"
 #import "MeetUpTableViewCell.h"
 #import "VideoResult.h"
@@ -192,7 +194,9 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
             
             for (NSDictionary *result in results) {
                 
-                [self.courseraSearchResults addObject:result];
+                CourseResult *course = [[CourseResult alloc] initWithJSON:result];
+                
+                [self.courseraSearchResults addObject:course];
             }
             
             [self.tableView reloadData];
@@ -261,18 +265,21 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     
     if (self.segmentedControl.selectedSegmentIndex == 0) {
         
-        //replace with custom Tutorials Cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InspirationCellIdentifier" forIndexPath:indexPath];
+        CourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CourseCellIdentifier" forIndexPath:indexPath];
         
-        //testing cell
-        cell.textLabel.text = self.courseraSearchResults[indexPath.row][@"name"];
-        cell.detailTextLabel.text = self.courseraSearchResults[indexPath.row][@"shortDescription"];
+        CourseResult *course = self.courseraSearchResults[indexPath.row];
         
-        NSString *imageURLString = self.courseraSearchResults[indexPath.row][@"smallIcon"];
-        NSURL *imageURL = [NSURL URLWithString:imageURLString];
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        UIImage *image = [UIImage imageWithData:imageData scale:1.0];
-        cell.imageView.image = image;
+        cell.courseNameLabel.text = course.courseName;
+        cell.descriptionLabel.text = course.courseDescription;
+        
+        NSURL *url = [NSURL URLWithString:course.iconURL];
+        
+        [cell.iconImageView sd_setImageWithURL:url
+                                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                         
+                                         cell.iconImageView.image = image;
+                                         
+                                     }];
         
         return cell;
         
@@ -308,7 +315,6 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         NSString *stringToSanitze = [event.eventDescription stringByStrippingHTML];
         cell.descriptionLabel.text = stringToSanitze;
         
-//      cell.descriptionLabel.text = event.eventDescription;
         cell.locationNameLabel.text = event.locationName;
         cell.locationAddressLabel.text = event.locationAddress;
         

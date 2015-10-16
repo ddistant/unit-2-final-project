@@ -18,6 +18,9 @@
 		6B006F511BCAC82600D5CE25 /* Learner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F501BCAC82600D5CE25 /* Learner.m */; settings = {ASSET_TAGS = (); }; };
 		6B006F541BCAC83A00D5CE25 /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F531BCAC83A00D5CE25 /* Skill.m */; settings = {ASSET_TAGS = (); }; };
 		6B006F571BCAC84F00D5CE25 /* JournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F561BCAC84F00D5CE25 /* JournalEntry.m */; settings = {ASSET_TAGS = (); }; };
+		6B8D69831BD1AAD1004327C4 /* CourseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D697F1BD1AAD1004327C4 /* CourseResult.m */; settings = {ASSET_TAGS = (); }; };
+		6B8D69841BD1AAD1004327C4 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D69811BD1AAD1004327C4 /* CourseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		6B8D69851BD1AAD1004327C4 /* CourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D69821BD1AAD1004327C4 /* CourseTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		6BA37E3F1BD17AD00079CB96 /* MeetUpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */; settings = {ASSET_TAGS = (); }; };
 		6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		6BA37E411BD17AD00079CB96 /* MeetUpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -50,6 +53,11 @@
 		6B006F531BCAC83A00D5CE25 /* Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skill.m; sourceTree = "<group>"; };
 		6B006F551BCAC84F00D5CE25 /* JournalEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalEntry.h; sourceTree = "<group>"; };
 		6B006F561BCAC84F00D5CE25 /* JournalEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalEntry.m; sourceTree = "<group>"; };
+		6B8D697E1BD1AAD1004327C4 /* CourseResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseResult.h; sourceTree = "<group>"; };
+		6B8D697F1BD1AAD1004327C4 /* CourseResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseResult.m; sourceTree = "<group>"; };
+		6B8D69801BD1AAD1004327C4 /* CourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
+		6B8D69811BD1AAD1004327C4 /* CourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewCell.m; sourceTree = "<group>"; };
+		6B8D69821BD1AAD1004327C4 /* CourseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseTableViewCell.xib; sourceTree = "<group>"; };
 		6BA37E3A1BD17AD00079CB96 /* MeetUpResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUpResult.h; sourceTree = "<group>"; };
 		6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetUpResult.m; sourceTree = "<group>"; };
 		6BA37E3C1BD17AD00079CB96 /* MeetUpTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUpTableViewCell.h; sourceTree = "<group>"; };
@@ -117,6 +125,11 @@
 				6B006F531BCAC83A00D5CE25 /* Skill.m */,
 				6B006F551BCAC84F00D5CE25 /* JournalEntry.h */,
 				6B006F561BCAC84F00D5CE25 /* JournalEntry.m */,
+				6B8D697E1BD1AAD1004327C4 /* CourseResult.h */,
+				6B8D697F1BD1AAD1004327C4 /* CourseResult.m */,
+				6B8D69801BD1AAD1004327C4 /* CourseTableViewCell.h */,
+				6B8D69811BD1AAD1004327C4 /* CourseTableViewCell.m */,
+				6B8D69821BD1AAD1004327C4 /* CourseTableViewCell.xib */,
 				6BA37E3A1BD17AD00079CB96 /* MeetUpResult.h */,
 				6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */,
 				6BA37E3C1BD17AD00079CB96 /* MeetUpTableViewCell.h */,
@@ -239,6 +252,7 @@
 				227CC26A1BC9792200C31F8F /* LaunchScreen.storyboard in Resources */,
 				227CC2671BC9792200C31F8F /* Assets.xcassets in Resources */,
 				227CC2621BC9792200C31F8F /* Main.storyboard in Resources */,
+				6B8D69851BD1AAD1004327C4 /* CourseTableViewCell.xib in Resources */,
 				6BA37E411BD17AD00079CB96 /* MeetUpTableViewCell.xib in Resources */,
 				6BA37E4F1BD196780079CB96 /* VideoTableViewCell.xib in Resources */,
 			);
@@ -285,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BA37E4E1BD196780079CB96 /* VideoTableViewCell.m in Sources */,
+				6B8D69831BD1AAD1004327C4 /* CourseResult.m in Sources */,
 				6B006F511BCAC82600D5CE25 /* Learner.m in Sources */,
 				6BB458841BC9C0B9007D6E0B /* InspirationViewController.m in Sources */,
 				227CC25C1BC9792200C31F8F /* AppDelegate.m in Sources */,
@@ -297,6 +312,7 @@
 				6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */,
 				6BA37E3F1BD17AD00079CB96 /* MeetUpResult.m in Sources */,
 				6BA37E4D1BD196780079CB96 /* VideoResult.m in Sources */,
+				6B8D69841BD1AAD1004327C4 /* CourseTableViewCell.m in Sources */,
 				6B006F541BCAC83A00D5CE25 /* Skill.m in Sources */,
 				227CC2591BC9792200C31F8F /* main.m in Sources */,
 				6BB458871BC9C0DA007D6E0B /* VideoDetailViewController.m in Sources */,
