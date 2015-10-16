@@ -26,11 +26,13 @@
     self.tableView.dataSource = self;
     
     self.learner = [[Learner alloc] init];
-    
     [self.learner loadLearnerSkill];
+    [JournalEntry fetchAll:^(NSArray *results, NSError *error) {
+        self.learner.journalEntries = [NSMutableArray arrayWithArray:results];
+        [self.tableView reloadData];
+    }];
     
     [self setUpUI];
-    
 }
 
 #pragma mark - UI
@@ -50,16 +52,26 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     //return count of API results array
-    return 0;
+    return self.learner.journalEntries.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JournalCellIdentifier" forIndexPath:indexPath];
     
-    //configure cell
+    cell.textLabel.text = self.learner.journalEntries[indexPath.row][@"entryTitle"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", self.learner.journalEntries[indexPath.row][@"entryTimestamp"]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.learner.journalEntries removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 
