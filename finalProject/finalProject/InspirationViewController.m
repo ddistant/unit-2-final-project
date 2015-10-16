@@ -6,12 +6,15 @@
 //  Copyright © 2015 ddistant. All rights reserved.
 //
 
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <AFNetworking/AFNetworking.h>
 #import "InspirationViewController.h"
 #import "VideoDetailViewController.h"
-#import <AFNetworking/AFNetworking.h>
 #import "Learner.h"
 #import "MeetUpResult.h"
 #import "MeetUpTableViewCell.h"
+#import "VideoResult.h"
+#import "VideoTableViewCell.h"
 
 const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 
@@ -107,7 +110,9 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
             
             for (NSDictionary *result in results) {
                 
-                [self.videoSearchResults addObject:result];
+                VideoResult *video = [[VideoResult alloc] initWithJSON:result];
+                
+                [self.videoSearchResults addObject:video];
             }
             
             [self.tableView reloadData];
@@ -267,22 +272,26 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
         UIImage *image = [UIImage imageWithData:imageData scale:1.0];
         cell.imageView.image = image;
-    
+        
         return cell;
-       
+        
         
     } else if (self.segmentedControl.selectedSegmentIndex == 1){
         
-        //replace with custom Videos cell
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InspirationCellIdentifier" forIndexPath:indexPath];
+        VideoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VideoCellIdentifier" forIndexPath:indexPath];
         
-        //testing cell
-        cell.textLabel.text = self.videoSearchResults[indexPath.row][@"snippet"][@"title"];;
-        cell.detailTextLabel.text = self.videoSearchResults[indexPath.row][@"snippet"][@"description"];
-        NSString *imageURLString = self.videoSearchResults[indexPath.row][@"snippet"][@"thumbnails"][@"default"][@"url"];
-        NSURL *imageURL = [NSURL URLWithString:imageURLString];
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        cell.imageView.image = [UIImage imageWithData:imageData];
+        VideoResult *video = self.videoSearchResults[indexPath.row];
+        
+        cell.titleLabel.text = video.title;
+        cell.descriptionLabel.text = video.videoDescription;
+        
+        NSURL *url = [NSURL URLWithString:video.thumbnailURL];
+        
+        [cell.thumbnailImageView sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            
+            cell.thumbnailImageView.image = image;
+            
+        }];
         
         return cell;
         
@@ -322,7 +331,9 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-    videoDetailVC.videoID = self.videoSearchResults[indexPath.row][@"id"][@"videoId"];
+    VideoResult *video = self.videoSearchResults[indexPath.row];
+    
+    videoDetailVC.videoID = video.videoID;
     
     [self presentViewController:videoDetailVC animated:YES completion:nil];
     

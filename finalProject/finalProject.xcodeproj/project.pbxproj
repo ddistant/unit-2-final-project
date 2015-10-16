@@ -21,6 +21,9 @@
 		6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		6BA37E411BD17AD00079CB96 /* MeetUpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		6BA37E431BD17E8B0079CB96 /* TikalSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BA37E421BD17E670079CB96 /* TikalSans-Medium.otf */; };
+		6BA37E4D1BD196780079CB96 /* VideoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E491BD196780079CB96 /* VideoResult.m */; settings = {ASSET_TAGS = (); }; };
+		6BA37E4E1BD196780079CB96 /* VideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E4B1BD196780079CB96 /* VideoTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		6BA37E4F1BD196780079CB96 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA37E4C1BD196780079CB96 /* VideoTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		6BB4587B1BC9BF55007D6E0B /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4587A1BC9BF55007D6E0B /* WelcomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6BB4587E1BC9C04F007D6E0B /* LearnerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4587D1BC9C04F007D6E0B /* LearnerProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6BB458811BC9C096007D6E0B /* ComposePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB458801BC9C096007D6E0B /* ComposePostViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -50,6 +53,11 @@
 		6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetUpTableViewCell.m; sourceTree = "<group>"; };
 		6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetUpTableViewCell.xib; sourceTree = "<group>"; };
 		6BA37E421BD17E670079CB96 /* TikalSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TikalSans-Medium.otf"; sourceTree = "<group>"; };
+		6BA37E481BD196780079CB96 /* VideoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoResult.h; sourceTree = "<group>"; };
+		6BA37E491BD196780079CB96 /* VideoResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoResult.m; sourceTree = "<group>"; };
+		6BA37E4A1BD196780079CB96 /* VideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTableViewCell.h; sourceTree = "<group>"; };
+		6BA37E4B1BD196780079CB96 /* VideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTableViewCell.m; sourceTree = "<group>"; };
+		6BA37E4C1BD196780079CB96 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		6BB458791BC9BF55007D6E0B /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		6BB4587A1BC9BF55007D6E0B /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		6BB4587C1BC9C04F007D6E0B /* LearnerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnerProfileViewController.h; sourceTree = "<group>"; };
@@ -111,6 +119,11 @@
 				6BA37E3C1BD17AD00079CB96 /* MeetUpTableViewCell.h */,
 				6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */,
 				6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */,
+				6BA37E481BD196780079CB96 /* VideoResult.h */,
+				6BA37E491BD196780079CB96 /* VideoResult.m */,
+				6BA37E4A1BD196780079CB96 /* VideoTableViewCell.h */,
+				6BA37E4B1BD196780079CB96 /* VideoTableViewCell.m */,
+				6BA37E4C1BD196780079CB96 /* VideoTableViewCell.xib */,
 				6BB458851BC9C0DA007D6E0B /* VideoDetailViewController.h */,
 				6BB458861BC9C0DA007D6E0B /* VideoDetailViewController.m */,
 				6BB458821BC9C0B9007D6E0B /* InspirationViewController.h */,
@@ -222,6 +235,7 @@
 				227CC2671BC9792200C31F8F /* Assets.xcassets in Resources */,
 				227CC2621BC9792200C31F8F /* Main.storyboard in Resources */,
 				6BA37E411BD17AD00079CB96 /* MeetUpTableViewCell.xib in Resources */,
+				6BA37E4F1BD196780079CB96 /* VideoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA37E4E1BD196780079CB96 /* VideoTableViewCell.m in Sources */,
 				6B006F511BCAC82600D5CE25 /* Learner.m in Sources */,
 				6BB458841BC9C0B9007D6E0B /* InspirationViewController.m in Sources */,
 				227CC25C1BC9792200C31F8F /* AppDelegate.m in Sources */,
@@ -275,6 +290,7 @@
 				227CC2651BC9792200C31F8F /* finalProject.xcdatamodeld in Sources */,
 				6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */,
 				6BA37E3F1BD17AD00079CB96 /* MeetUpResult.m in Sources */,
+				6BA37E4D1BD196780079CB96 /* VideoResult.m in Sources */,
 				6B006F541BCAC83A00D5CE25 /* Skill.m in Sources */,
 				227CC2591BC9792200C31F8F /* main.m in Sources */,
 				6BB458871BC9C0DA007D6E0B /* VideoDetailViewController.m in Sources */,
