@@ -84,11 +84,11 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     
     NSString *query = [[NSUserDefaults standardUserDefaults] objectForKey:LearnerSkillKey];
     
-    NSString *urlString = [NSString stringWithFormat:@"https://api.meetup.com/2/open_events?&sign=true&zip=11215&photo-host=public&topic=guitar&page=20&key=742c27514d305c6a3a72223524146c46&q=search&query=%@", query];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.meetup.com/2/open_events?&sign=true&zip=11215&photo-host=public&page=20&key=742c27514d305c6a3a72223524146c46&q=search&query=%@", query];
     
     NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
-    //fetch data from YouTube endpoint and add to array
+    //fetch data from Coursera endpoint and add to array
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
@@ -101,6 +101,9 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         for (NSDictionary *result in results) {
             
             [self.meetupSearchResults addObject:result];
+            if (results.count < 1) {
+                [self createAlertWithTitle:@"Search Error" AndMessage:@"No meetups found"];
+            }
         }
         
         [self.tableView reloadData];
@@ -109,6 +112,7 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         NSLog(@"%@", error);
         
     }];
+    
 }
 - (void) fetchCourseraData {
        
@@ -118,7 +122,7 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     
     NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
-    //fetch data from YouTube endpoint and add to array
+    //fetch data from Coursera endpoint and add to array
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
@@ -131,6 +135,9 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         for (NSDictionary *result in results) {
             
             [self.courseraSearchResults addObject:result];
+            if (results.count < 1) {
+                [self createAlertWithTitle:@"Search Error" AndMessage:@"No tutorials found"];
+            }
         }
         
         [self.tableView reloadData];
@@ -139,6 +146,7 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         NSLog(@"%@", error);
         
     }];
+    
 }
 
 - (void) createAlertWithTitle:(NSString *)title AndMessage:(NSString *)message {
@@ -174,31 +182,27 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     if (self.segmentedControl.selectedSegmentIndex == 0) {
-        if (self.courseraSearchResults.count < 1) {
-            [self createAlertWithTitle:@"Search Error" AndMessage:@"No tutorials found"];
-        }
-        //return count of Tutorials API Array
+        
+    //return count of Coursera API Array
         return  self.courseraSearchResults.count;
                 
-    }else if (self.segmentedControl.selectedSegmentIndex == 1){
+    } else if (self.segmentedControl.selectedSegmentIndex == 1){
         
         //return the results of the Videos API Array
-        if (self.videoSearchResults.count < 1) {
-            [self createAlertWithTitle:@"Search Error" AndMessage:@"No videos found"];
-        }
-        
         return self.videoSearchResults.count;
         
-    }else {
-        if (self.meetupSearchResults.count < 1) {
-            [self createAlertWithTitle:@"Search Error" AndMessage:@"No meetups found"];
-        }
+    } else {
+        
         //return count of MeetUps API results array
         return self.meetupSearchResults.count;
     }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (self.segmentedControl.selectedSegmentIndex == UIControlEventValueChanged ) {
+        [self.tableView reloadData];
+    }
     
     if (self.segmentedControl.selectedSegmentIndex == 0) {
         
@@ -210,19 +214,15 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         cell.detailTextLabel.text = self.courseraSearchResults[indexPath.row][@"shortDescription"];
         
         NSString *imageURLString = self.courseraSearchResults[indexPath.row][@"smallIcon"];
-//        NSURL *imageURL = [NSURL URLWithString:imageURLString];
-//        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURLString]]];
-//        cell.imageView.image = [UIImage imageWithContentsOfFile:imageURLString];
-//        
-        
-
-
-        
+        NSURL *imageURL = [NSURL URLWithString:imageURLString];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage *image = [UIImage imageWithData:imageData scale:1.0];
+        cell.imageView.image = image;
+    
         return cell;
        
         
-    }else if (self.segmentedControl.selectedSegmentIndex == 1){
+    } else if (self.segmentedControl.selectedSegmentIndex == 1){
         
         //replace with custom Videos cell
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InspirationCellIdentifier" forIndexPath:indexPath];
@@ -237,7 +237,7 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         
         return cell;
         
-    }else {
+    } else {
         
         //replace with custom Meet-Ups cell
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InspirationCellIdentifier" forIndexPath:indexPath];
@@ -245,6 +245,7 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         //cell
         cell.textLabel.text = self.meetupSearchResults[indexPath.row][@"name"];
         cell.detailTextLabel.text = self.meetupSearchResults[indexPath.row][@"description"];
+        cell.imageView.image = nil;
         
         return cell;
     }
