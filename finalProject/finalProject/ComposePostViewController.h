@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JournalEntry.h"
+#import "Learner.h"
 
 @interface ComposePostViewController : UIViewController
 
