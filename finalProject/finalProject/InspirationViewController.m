@@ -15,6 +15,7 @@
 #import "MeetUpTableViewCell.h"
 #import "VideoResult.h"
 #import "VideoTableViewCell.h"
+#import "NSString+NSString_Sanitize.h"
 
 const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 
@@ -303,10 +304,16 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         
         cell.eventNameLabel.text = event.eventName;
         cell.groupNameLabel.text = event.groupName;
-        cell.descriptionLabel.text = event.eventDescription;
+        
+        NSString *stringToSanitze = [event.eventDescription stringByStrippingHTML];
+        cell.descriptionLabel.text = stringToSanitze;
+        
+//      cell.descriptionLabel.text = event.eventDescription;
         cell.locationNameLabel.text = event.locationName;
         cell.locationAddressLabel.text = event.locationAddress;
         
+        
+       
         return cell;
     }
 }
