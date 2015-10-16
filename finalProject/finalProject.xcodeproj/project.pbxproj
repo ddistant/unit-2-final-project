@@ -17,6 +17,10 @@
 		6B006F511BCAC82600D5CE25 /* Learner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F501BCAC82600D5CE25 /* Learner.m */; settings = {ASSET_TAGS = (); }; };
 		6B006F541BCAC83A00D5CE25 /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F531BCAC83A00D5CE25 /* Skill.m */; settings = {ASSET_TAGS = (); }; };
 		6B006F571BCAC84F00D5CE25 /* JournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F561BCAC84F00D5CE25 /* JournalEntry.m */; settings = {ASSET_TAGS = (); }; };
+		6BA37E3F1BD17AD00079CB96 /* MeetUpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */; settings = {ASSET_TAGS = (); }; };
+		6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		6BA37E411BD17AD00079CB96 /* MeetUpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		6BA37E431BD17E8B0079CB96 /* TikalSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BA37E421BD17E670079CB96 /* TikalSans-Medium.otf */; };
 		6BB4587B1BC9BF55007D6E0B /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4587A1BC9BF55007D6E0B /* WelcomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6BB4587E1BC9C04F007D6E0B /* LearnerProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4587D1BC9C04F007D6E0B /* LearnerProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6BB458811BC9C096007D6E0B /* ComposePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB458801BC9C096007D6E0B /* ComposePostViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -40,6 +44,12 @@
 		6B006F531BCAC83A00D5CE25 /* Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skill.m; sourceTree = "<group>"; };
 		6B006F551BCAC84F00D5CE25 /* JournalEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalEntry.h; sourceTree = "<group>"; };
 		6B006F561BCAC84F00D5CE25 /* JournalEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalEntry.m; sourceTree = "<group>"; };
+		6BA37E3A1BD17AD00079CB96 /* MeetUpResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUpResult.h; sourceTree = "<group>"; };
+		6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetUpResult.m; sourceTree = "<group>"; };
+		6BA37E3C1BD17AD00079CB96 /* MeetUpTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUpTableViewCell.h; sourceTree = "<group>"; };
+		6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetUpTableViewCell.m; sourceTree = "<group>"; };
+		6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetUpTableViewCell.xib; sourceTree = "<group>"; };
+		6BA37E421BD17E670079CB96 /* TikalSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TikalSans-Medium.otf"; sourceTree = "<group>"; };
 		6BB458791BC9BF55007D6E0B /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		6BB4587A1BC9BF55007D6E0B /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		6BB4587C1BC9C04F007D6E0B /* LearnerProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnerProfileViewController.h; sourceTree = "<group>"; };
@@ -96,6 +106,11 @@
 				6B006F531BCAC83A00D5CE25 /* Skill.m */,
 				6B006F551BCAC84F00D5CE25 /* JournalEntry.h */,
 				6B006F561BCAC84F00D5CE25 /* JournalEntry.m */,
+				6BA37E3A1BD17AD00079CB96 /* MeetUpResult.h */,
+				6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */,
+				6BA37E3C1BD17AD00079CB96 /* MeetUpTableViewCell.h */,
+				6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */,
+				6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */,
 				6BB458851BC9C0DA007D6E0B /* VideoDetailViewController.h */,
 				6BB458861BC9C0DA007D6E0B /* VideoDetailViewController.m */,
 				6BB458821BC9C0B9007D6E0B /* InspirationViewController.h */,
@@ -119,6 +134,7 @@
 		227CC2571BC9792200C31F8F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BA37E421BD17E670079CB96 /* TikalSans-Medium.otf */,
 				227CC2581BC9792200C31F8F /* main.m */,
 			);
 			name = "Supporting Files";
@@ -201,9 +217,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA37E431BD17E8B0079CB96 /* TikalSans-Medium.otf in Resources */,
 				227CC26A1BC9792200C31F8F /* LaunchScreen.storyboard in Resources */,
 				227CC2671BC9792200C31F8F /* Assets.xcassets in Resources */,
 				227CC2621BC9792200C31F8F /* Main.storyboard in Resources */,
+				6BA37E411BD17AD00079CB96 /* MeetUpTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +273,8 @@
 				6BB4587B1BC9BF55007D6E0B /* WelcomeViewController.m in Sources */,
 				6BB4587E1BC9C04F007D6E0B /* LearnerProfileViewController.m in Sources */,
 				227CC2651BC9792200C31F8F /* finalProject.xcdatamodeld in Sources */,
+				6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */,
+				6BA37E3F1BD17AD00079CB96 /* MeetUpResult.m in Sources */,
 				6B006F541BCAC83A00D5CE25 /* Skill.m in Sources */,
 				227CC2591BC9792200C31F8F /* main.m in Sources */,
 				6BB458871BC9C0DA007D6E0B /* VideoDetailViewController.m in Sources */,

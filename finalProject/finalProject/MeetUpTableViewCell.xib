@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="TikalSans-Medium.otf">
+            <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeetUpCellIdentifier" rowHeight="336" id="fpp-iv-4QX" customClass="MeetUpTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="442" height="336"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fpp-iv-4QX" id="0Sh-Oj-jOF">
+                <rect key="frame" x="0.0" y="0.0" width="442" height="335"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q5-eT-DpJ">
+                        <rect key="frame" x="20" y="32" width="402" height="20"/>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="20"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="group name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waq-2u-V8G">
+                        <rect key="frame" x="20" y="60" width="402" height="18"/>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="18"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIK-I7-8Vy">
+                        <rect key="frame" x="20" y="90" width="402" height="139"/>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F76-2j-RK5">
+                        <rect key="frame" x="20" y="245" width="402" height="18"/>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="18"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Im-ei-M0p">
+                        <rect key="frame" x="20" y="271" width="402" height="15"/>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="event url" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVp-mx-Wh6">
+                        <rect key="frame" x="20" y="301" width="402" height="18"/>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="18"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="F76-2j-RK5" firstAttribute="top" secondItem="yIK-I7-8Vy" secondAttribute="bottom" constant="16" id="2GY-XM-UWv"/>
+                    <constraint firstAttribute="trailing" secondItem="waq-2u-V8G" secondAttribute="trailing" constant="20" id="57r-Jf-a2E"/>
+                    <constraint firstItem="vVp-mx-Wh6" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="6Se-6l-y6C"/>
+                    <constraint firstItem="yIK-I7-8Vy" firstAttribute="top" secondItem="waq-2u-V8G" secondAttribute="bottom" constant="12" id="Ap5-Me-GEJ"/>
+                    <constraint firstItem="5Q5-eT-DpJ" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="F8l-Aa-0HJ"/>
+                    <constraint firstItem="waq-2u-V8G" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="FOl-F9-Lmq"/>
+                    <constraint firstAttribute="trailing" secondItem="0Im-ei-M0p" secondAttribute="trailing" constant="20" id="KBB-yL-sLl"/>
+                    <constraint firstItem="0Im-ei-M0p" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="RC5-h5-lCk"/>
+                    <constraint firstAttribute="trailing" secondItem="vVp-mx-Wh6" secondAttribute="trailing" constant="20" id="V5C-Fy-Fg2"/>
+                    <constraint firstItem="F76-2j-RK5" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="Wtb-Tm-dP2"/>
+                    <constraint firstItem="0Im-ei-M0p" firstAttribute="top" secondItem="F76-2j-RK5" secondAttribute="bottom" constant="8" id="Xk1-vc-trC"/>
+                    <constraint firstAttribute="trailing" secondItem="yIK-I7-8Vy" secondAttribute="trailing" constant="20" id="b2G-1w-5qJ"/>
+                    <constraint firstItem="vVp-mx-Wh6" firstAttribute="top" secondItem="0Im-ei-M0p" secondAttribute="bottom" constant="15" id="bai-jS-zeP"/>
+                    <constraint firstAttribute="trailing" secondItem="F76-2j-RK5" secondAttribute="trailing" constant="20" id="gPX-y2-OBZ"/>
+                    <constraint firstItem="5Q5-eT-DpJ" firstAttribute="top" secondItem="0Sh-Oj-jOF" secondAttribute="top" constant="32" id="jV1-es-rDV"/>
+                    <constraint firstAttribute="bottom" secondItem="vVp-mx-Wh6" secondAttribute="bottom" constant="16" id="pb9-kh-x4v"/>
+                    <constraint firstItem="yIK-I7-8Vy" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="t88-JR-WBJ"/>
+                    <constraint firstAttribute="trailing" secondItem="5Q5-eT-DpJ" secondAttribute="trailing" constant="20" id="vTc-bd-8sE"/>
+                    <constraint firstItem="waq-2u-V8G" firstAttribute="top" secondItem="5Q5-eT-DpJ" secondAttribute="bottom" constant="8" id="zNR-Fb-YdE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="yIK-I7-8Vy" id="aeI-OW-RxN"/>
+                <outlet property="eventNameLabel" destination="5Q5-eT-DpJ" id="IuJ-Iw-MJZ"/>
+                <outlet property="eventURLLabel" destination="vVp-mx-Wh6" id="vS9-dQ-c4r"/>
+                <outlet property="groupNameLabel" destination="waq-2u-V8G" id="oLT-kh-P4p"/>
+                <outlet property="locationAddressLabel" destination="0Im-ei-M0p" id="k8q-pp-hRn"/>
+                <outlet property="locationNameLabel" destination="F76-2j-RK5" id="lIx-FW-xms"/>
+            </connections>
+            <point key="canvasLocation" x="243" y="355"/>
+        </tableViewCell>
+    </objects>
+</document>
