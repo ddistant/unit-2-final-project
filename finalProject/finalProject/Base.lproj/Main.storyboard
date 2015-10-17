@@ -437,6 +437,9 @@
                                             <rect key="frame" x="213" y="100" width="174" height="17"/>
                                             <state key="normal" title="Create A Username"/>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryi-RP-ZcS">
+                                            <rect key="frame" x="265" y="25" width="70" height="70"/>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.67126282020000005" green="1" blue="0.8951362464" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>

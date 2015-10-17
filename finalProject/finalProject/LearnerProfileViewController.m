@@ -8,12 +8,19 @@
 
 #import "LearnerProfileViewController.h"
 
-@interface LearnerProfileViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface LearnerProfileViewController ()
+<
+UITableViewDelegate,
+UITableViewDataSource,
+UIImagePickerControllerDelegate,
+UINavigationControllerDelegate
+>
 
 @property (weak, nonatomic) IBOutlet UIImageView *learnerProfileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *learnerUsernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *learnerSkillLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) UIImagePickerController *imagePicker;
 
 @end
 
@@ -35,6 +42,8 @@
     [self setUpUI];
 }
 
+
+
 #pragma mark - UI
 
 -(void)setUpUI{
@@ -42,7 +51,7 @@
     self.learnerSkillLabel.text = self.learner.skill.skillName;
 }
 
-#pragma mark - Table View Datasource Methods
+#pragma mark - tableView data source methods
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
@@ -73,6 +82,10 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
+
+#pragma mark - UIImagePickerDelegate methods
+
+
 
 
 @end
