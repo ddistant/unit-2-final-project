@@ -42,6 +42,51 @@ UINavigationControllerDelegate
     [self setUpUI];
 }
 
+- (IBAction)photoButtonTapped:(id)sender {
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message: nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *setUsername = [UIAlertAction actionWithTitle:@"Set username" style:UIAlertActionStyleDefault
+                                                        handler:^(UIAlertAction * action) {
+                                                            
+                                                            [self setUsername];
+                                                        }];
+    
+    UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:@"Take photo" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    UIAlertAction *choosePhoto = [UIAlertAction actionWithTitle:@"Choose photo" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * action) {
+                                                      
+                                                          [self choosePhoto];
+                                                      }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * action) {}];
+    
+    [actionSheet addAction:setUsername];
+    [actionSheet addAction:takePhoto];
+    [actionSheet addAction:choosePhoto];
+    [actionSheet addAction:cancel];
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
+- (void) setUsername {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Set username"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        self.learnerUsernameLabel.text = textField.text;
+    }];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    {};
+}
 
 
 #pragma mark - UI
@@ -85,7 +130,37 @@ UINavigationControllerDelegate
 
 #pragma mark - UIImagePickerDelegate methods
 
+-(void) choosePhoto {
+    
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    self.imagePicker.delegate = self;
+    [self.imagePicker setAllowsEditing:NO];
+    [self presentViewController:_imagePicker animated:YES completion:nil];
+    
+}
 
+-(void) takePhoto {
+    
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    self.imagePicker.delegate = self;
+    [self.imagePicker setAllowsEditing:YES];
+    [self presentViewController:_imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    picker = _imagePicker;
+    UIImage *imageChosen = info[UIImagePickerControllerOriginalImage];
+    self.learnerProfileImageView.image = imageChosen;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 @end
