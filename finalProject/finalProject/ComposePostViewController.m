@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIButton *addPhotoButton;
+@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 
 @end
 
