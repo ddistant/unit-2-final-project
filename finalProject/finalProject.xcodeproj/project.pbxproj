@@ -21,6 +21,10 @@
 		6B8D69831BD1AAD1004327C4 /* CourseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D697F1BD1AAD1004327C4 /* CourseResult.m */; settings = {ASSET_TAGS = (); }; };
 		6B8D69841BD1AAD1004327C4 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D69811BD1AAD1004327C4 /* CourseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		6B8D69851BD1AAD1004327C4 /* CourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D69821BD1AAD1004327C4 /* CourseTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		6B9B1A891BD3EBB200F5D995 /* JournalEntryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B1A841BD3EBB200F5D995 /* JournalEntryHeaderView.m */; settings = {ASSET_TAGS = (); }; };
+		6B9B1A8A1BD3EBB200F5D995 /* JournalEntryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B1A851BD3EBB200F5D995 /* JournalEntryHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
+		6B9B1A8B1BD3EBB200F5D995 /* JournalEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B1A871BD3EBB200F5D995 /* JournalEntryTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		6B9B1A8C1BD3EBB200F5D995 /* JournalEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B1A881BD3EBB200F5D995 /* JournalEntryTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		6BA37E3F1BD17AD00079CB96 /* MeetUpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */; settings = {ASSET_TAGS = (); }; };
 		6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		6BA37E411BD17AD00079CB96 /* MeetUpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -58,6 +62,12 @@
 		6B8D69801BD1AAD1004327C4 /* CourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
 		6B8D69811BD1AAD1004327C4 /* CourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewCell.m; sourceTree = "<group>"; };
 		6B8D69821BD1AAD1004327C4 /* CourseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseTableViewCell.xib; sourceTree = "<group>"; };
+		6B9B1A831BD3EBB200F5D995 /* JournalEntryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalEntryHeaderView.h; sourceTree = "<group>"; };
+		6B9B1A841BD3EBB200F5D995 /* JournalEntryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalEntryHeaderView.m; sourceTree = "<group>"; };
+		6B9B1A851BD3EBB200F5D995 /* JournalEntryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalEntryHeaderView.xib; sourceTree = "<group>"; };
+		6B9B1A861BD3EBB200F5D995 /* JournalEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalEntryTableViewCell.h; sourceTree = "<group>"; };
+		6B9B1A871BD3EBB200F5D995 /* JournalEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalEntryTableViewCell.m; sourceTree = "<group>"; };
+		6B9B1A881BD3EBB200F5D995 /* JournalEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalEntryTableViewCell.xib; sourceTree = "<group>"; };
 		6BA37E3A1BD17AD00079CB96 /* MeetUpResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUpResult.h; sourceTree = "<group>"; };
 		6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetUpResult.m; sourceTree = "<group>"; };
 		6BA37E3C1BD17AD00079CB96 /* MeetUpTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUpTableViewCell.h; sourceTree = "<group>"; };
@@ -127,6 +137,12 @@
 				6B006F561BCAC84F00D5CE25 /* JournalEntry.m */,
 				6B8D697E1BD1AAD1004327C4 /* CourseResult.h */,
 				6B8D697F1BD1AAD1004327C4 /* CourseResult.m */,
+				6B9B1A831BD3EBB200F5D995 /* JournalEntryHeaderView.h */,
+				6B9B1A841BD3EBB200F5D995 /* JournalEntryHeaderView.m */,
+				6B9B1A851BD3EBB200F5D995 /* JournalEntryHeaderView.xib */,
+				6B9B1A861BD3EBB200F5D995 /* JournalEntryTableViewCell.h */,
+				6B9B1A871BD3EBB200F5D995 /* JournalEntryTableViewCell.m */,
+				6B9B1A881BD3EBB200F5D995 /* JournalEntryTableViewCell.xib */,
 				6B8D69801BD1AAD1004327C4 /* CourseTableViewCell.h */,
 				6B8D69821BD1AAD1004327C4 /* CourseTableViewCell.xib */,
 				6B8D69811BD1AAD1004327C4 /* CourseTableViewCell.m */,
@@ -249,9 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BA37E431BD17E8B0079CB96 /* TikalSans-Medium.otf in Resources */,
+				6B9B1A8C1BD3EBB200F5D995 /* JournalEntryTableViewCell.xib in Resources */,
 				227CC26A1BC9792200C31F8F /* LaunchScreen.storyboard in Resources */,
 				227CC2671BC9792200C31F8F /* Assets.xcassets in Resources */,
 				227CC2621BC9792200C31F8F /* Main.storyboard in Resources */,
+				6B9B1A8A1BD3EBB200F5D995 /* JournalEntryHeaderView.xib in Resources */,
 				6B8D69851BD1AAD1004327C4 /* CourseTableViewCell.xib in Resources */,
 				6BA37E411BD17AD00079CB96 /* MeetUpTableViewCell.xib in Resources */,
 				6BA37E4F1BD196780079CB96 /* VideoTableViewCell.xib in Resources */,
@@ -298,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B9B1A891BD3EBB200F5D995 /* JournalEntryHeaderView.m in Sources */,
 				6BA37E4E1BD196780079CB96 /* VideoTableViewCell.m in Sources */,
 				6B8D69831BD1AAD1004327C4 /* CourseResult.m in Sources */,
 				6B006F511BCAC82600D5CE25 /* Learner.m in Sources */,
@@ -311,6 +330,7 @@
 				227CC2651BC9792200C31F8F /* finalProject.xcdatamodeld in Sources */,
 				6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */,
 				6BA37E3F1BD17AD00079CB96 /* MeetUpResult.m in Sources */,
+				6B9B1A8B1BD3EBB200F5D995 /* JournalEntryTableViewCell.m in Sources */,
 				6BA37E4D1BD196780079CB96 /* VideoResult.m in Sources */,
 				6B8D69841BD1AAD1004327C4 /* CourseTableViewCell.m in Sources */,
 				6B006F541BCAC83A00D5CE25 /* Skill.m in Sources */,

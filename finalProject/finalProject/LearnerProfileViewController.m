@@ -7,6 +7,9 @@
 //
 
 #import "LearnerProfileViewController.h"
+#import "JournalEntryTableViewCell.h"
+#import "JournalEntryHeaderView.h"
+
 
 @interface LearnerProfileViewController ()
 <
@@ -40,6 +43,8 @@ UINavigationControllerDelegate
     }];
     
     [self setUpUI];
+    
+    [self setUpCustomTableViewCells];
 }
 
 - (IBAction)photoButtonTapped:(id)sender {
@@ -96,25 +101,48 @@ UINavigationControllerDelegate
     self.learnerSkillLabel.text = self.learner.skill.skillName;
 }
 
+#pragma mark - custom table view cells
+
+-(void)setUpCustomTableViewCells{
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 44;
+    
+    UINib *journalEntryNib = [UINib nibWithNibName:@"JournalEntryTableViewCell" bundle:nil];
+    UINib *journalEntryHeader = [UINib nibWithNibName:@"JournalEntryHeaderView" bundle:nil];
+    
+    [self.tableView registerNib: journalEntryNib forCellReuseIdentifier:@"JournalEntryCellIdentifier"];
+    [self.tableView registerNib:journalEntryHeader forHeaderFooterViewReuseIdentifier:@"JournalEntryHeaderIdentifier"];
+}
+
 #pragma mark - tableView data source methods
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 1;
+    return self.learner.journalEntries.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    //return count of API results array
-    return self.learner.journalEntries.count;
+    return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JournalCellIdentifier" forIndexPath:indexPath];
+    JournalEntryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JournalEntryCellIdentifier" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.learner.journalEntries[indexPath.row][@"entryTitle"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", self.learner.journalEntries[indexPath.row][@"entryTimestamp"]];
+    JournalEntry *journalEntry = self.learner.journalEntries[indexPath.section];
+    
+    if (journalEntry.entryText != nil) {
+        
+        cell.journalEntryLabel.text = journalEntry.entryText;
+    
+    }
+    
+    if (journalEntry.entryPhoto != nil) {
+        
+        cell.journalEntryImageView.image = journalEntry.entryPhoto;
+    }
     
     return cell;
 }
@@ -126,6 +154,26 @@ UINavigationControllerDelegate
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    JournalEntryHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"JournalEntryHeaderIdentifier"];
+    
+    JournalEntry *journalEntry = self.learner.journalEntries[section];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+    NSString *formattedDateString = [dateFormatter stringFromDate:journalEntry.entryTimestamp];
+    NSString *timestampString = [NSString stringWithFormat:@"%@", formattedDateString];
+    
+    headerView.titleLabel.text = journalEntry.entryTitle;
+    headerView.timestampLabel.text = timestampString;
+    
+    headerView.backgroundView = [[UIView alloc] initWithFrame:headerView.bounds];
+    headerView.backgroundView.backgroundColor = [UIColor whiteColor];
+    
+    return headerView;
 }
 
 #pragma mark - UIImagePickerDelegate methods
