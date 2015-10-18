@@ -167,6 +167,11 @@ UINavigationControllerDelegate
     }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 50;
+}
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
     JournalEntryHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"JournalEntryHeaderIdentifier"];
