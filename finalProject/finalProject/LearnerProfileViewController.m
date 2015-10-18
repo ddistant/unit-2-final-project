@@ -48,6 +48,7 @@ UINavigationControllerDelegate
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
     
     [self.learner loadLearnerSkill];
     
@@ -142,12 +143,27 @@ UINavigationControllerDelegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return self.learner.journalEntries.count;
+    if (self.learner.journalEntries.count < 1) {
+        
+        return 0;
+        
+    }else {
+        
+        return self.learner.journalEntries.count;
+    }
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 1;
+    if (self.learner.journalEntries.count < 1) {
+        
+        return 0;
+        
+    }else {
+        
+        return 1;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -156,7 +172,7 @@ UINavigationControllerDelegate
     
     JournalEntry *journalEntry = self.learner.journalEntries[indexPath.section];
     
-    cell.journalEntryImageView.hidden = YES;
+    //cell.journalEntryImageView.image = nil;
     
     if (journalEntry.entryText != nil) {
         
@@ -166,8 +182,6 @@ UINavigationControllerDelegate
     
     if (journalEntry.entryPhoto != nil) {
         
-        cell.journalEntryImageView.hidden = NO;
-        
         [journalEntry.entryPhoto getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             
             if (!error) {
@@ -175,6 +189,9 @@ UINavigationControllerDelegate
             }
         }];
 
+    }else {
+        
+        cell.journalEntryImageView.frame = CGRectZero;
     }
     
     return cell;

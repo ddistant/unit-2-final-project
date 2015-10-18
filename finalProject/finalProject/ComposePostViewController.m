@@ -90,8 +90,13 @@
     post.entryTitle = self.titleTextField.text;
     post.entryText = self.textView.text;
     
-    NSData *imageData = UIImageJPEGRepresentation(self.photoImageView.image, 0.5f);
-    post.entryPhoto = [PFFile fileWithData:imageData];
+    if (self.photoImageView.image != nil){
+        
+        
+        NSData *imageData = UIImageJPEGRepresentation(self.photoImageView.image, 0.5f);
+        post.entryPhoto = [PFFile fileWithData:imageData];
+
+    }
     
     [post saveInBackground];
     
