@@ -158,12 +158,21 @@ UINavigationControllerDelegate
     return cell;
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.learner.journalEntries removeObjectAtIndex:indexPath.row];
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [tableView reloadData];
+        PFQuery *query = [PFQuery queryWithClassName:[JournalEntry parseClassName]];
+        [query whereKey:@"entryTitle" equalTo:[self.learner.journalEntries objectAtIndex:indexPath.row][@"entryTitle"]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            PFObject *object = objects[0];
+            [object deleteInBackground];
+        }];
     }
 }
 
