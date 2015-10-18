@@ -117,7 +117,7 @@ UINavigationControllerDelegate
 -(void)setUpCustomTableViewCells{
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 44;
+    self.tableView.estimatedRowHeight = 100;
     
     UINib *journalEntryNib = [UINib nibWithNibName:@"JournalEntryTableViewCell" bundle:nil];
     UINib *journalEntryHeader = [UINib nibWithNibName:@"JournalEntryHeaderView" bundle:nil];
@@ -181,8 +181,8 @@ UINavigationControllerDelegate
     headerView.titleLabel.text = journalEntry.entryTitle;
     headerView.timestampLabel.text = timestampString;
     
-    headerView.backgroundView = [[UIView alloc] initWithFrame:headerView.bounds];
-    headerView.backgroundView.backgroundColor = [UIColor whiteColor];
+    //headerView.backgroundView = [[UIView alloc] initWithFrame:headerView.bounds];
+    //headerView.backgroundView.backgroundColor = [UIColor whiteColor];
     
     return headerView;
 }
