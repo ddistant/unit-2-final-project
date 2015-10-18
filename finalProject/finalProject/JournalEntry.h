@@ -15,7 +15,7 @@
 @property (nonatomic) NSDate *entryTimestamp;
 @property (nonatomic) NSString *entryTitle;
 @property (nonatomic) NSString *entryText;
-@property (nonatomic) UIImage *entryPhoto;
+@property (nonatomic) PFFile *entryPhoto;
 @property (nonatomic) NSURL *entryLink;
 
 +(NSString *)parseClassName;

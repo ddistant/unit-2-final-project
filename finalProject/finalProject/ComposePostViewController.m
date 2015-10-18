@@ -89,7 +89,10 @@
     post.entryTimestamp = [NSDate date];
     post.entryTitle = self.titleTextField.text;
     post.entryText = self.textView.text;
-    post.entryPhoto = self.photoImageView.image;
+    
+    NSData *imageData = UIImageJPEGRepresentation(self.photoImageView.image, 0.5f);
+    post.entryPhoto = [PFFile fileWithData:imageData];
+    
     [post saveInBackground];
     
     [self dismissViewControllerAnimated:YES completion:nil];

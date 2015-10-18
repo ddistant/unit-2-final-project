@@ -47,6 +47,18 @@ UINavigationControllerDelegate
     [self setUpCustomTableViewCells];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [self.learner loadLearnerSkill];
+    
+    [JournalEntry fetchAll:^(NSArray *results, NSError *error) {
+        
+        self.learner.journalEntries = [NSMutableArray arrayWithArray:results];
+        
+        [self.tableView reloadData];
+    }];
+}
+
 - (IBAction)photoButtonTapped:(id)sender {
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message: nil preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -144,6 +156,8 @@ UINavigationControllerDelegate
     
     JournalEntry *journalEntry = self.learner.journalEntries[indexPath.section];
     
+    cell.journalEntryImageView.hidden = YES;
+    
     if (journalEntry.entryText != nil) {
         
         cell.journalEntryLabel.text = journalEntry.entryText;
@@ -152,7 +166,15 @@ UINavigationControllerDelegate
     
     if (journalEntry.entryPhoto != nil) {
         
-        cell.journalEntryImageView.image = journalEntry.entryPhoto;
+        cell.journalEntryImageView.hidden = NO;
+        
+        [journalEntry.entryPhoto getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            
+            if (!error) {
+                cell.journalEntryImageView.image = [UIImage imageWithData:data];
+            }
+        }];
+
     }
     
     return cell;
@@ -185,9 +207,6 @@ UINavigationControllerDelegate
     
     headerView.titleLabel.text = journalEntry.entryTitle;
     headerView.timestampLabel.text = timestampString;
-    
-    //headerView.backgroundView = [[UIView alloc] initWithFrame:headerView.bounds];
-    //headerView.backgroundView.backgroundColor = [UIColor whiteColor];
     
     return headerView;
 }

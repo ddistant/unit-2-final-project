@@ -18,8 +18,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="304" height="420"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j0m-By-TbH">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j0m-By-TbH">
                         <rect key="frame" x="8" y="8" width="288" height="384"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="384" id="Wcv-yE-aBj"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="az5-is-wrx">
                         <rect key="frame" x="8" y="400" width="288" height="12"/>
