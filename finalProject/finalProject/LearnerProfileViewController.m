@@ -68,6 +68,7 @@ UINavigationControllerDelegate
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction * action) {}];
     
+    
     [actionSheet addAction:setUsername];
     [actionSheet addAction:takePhoto];
     [actionSheet addAction:choosePhoto];
@@ -80,17 +81,20 @@ UINavigationControllerDelegate
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
+    __block UITextField *inputField;
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        self.learnerUsernameLabel.text = textField.text;
+        inputField = textField;
     }];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
+                                                          handler:^(UIAlertAction * action) {
+                                                              self.learnerUsernameLabel.text = inputField.text;
+                                                              self.learner.learnerName = inputField.text;
+                                                              [[NSUserDefaults standardUserDefaults] setObject:inputField.text forKey:@"username"];
+                                                          }];
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
-    
-    {};
 }
 
 
@@ -99,6 +103,13 @@ UINavigationControllerDelegate
 -(void)setUpUI{
     
     self.learnerSkillLabel.text = self.learner.skill.skillName;
+    
+    if ([self.learner.learnerName isEqualToString:@""]) {
+        self.learnerUsernameLabel.text = @"Set a username";
+    } else {
+        self.learner.learnerName = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+        self.learnerUsernameLabel.text = self.learner.learnerName;
+    }
 }
 
 #pragma mark - custom table view cells
