@@ -7,6 +7,9 @@
         <mutableArray key="TikalSans-Medium.otf">
             <string>TikalSansMedium</string>
             <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -29,20 +32,20 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What skill are you learning?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0p-VP-kbN">
                                 <rect key="frame" x="20" y="192" width="560" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyG-xR-K5f">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyG-xR-K5f">
                                 <rect key="frame" x="280" y="349" width="41" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="28"/>
                                 <state key="normal" title="GO"/>
                                 <connections>
                                     <action selector="goButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddD-Vz-txq"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.99123909195397797" blue="0.71249510646325398" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.9137254901960784" green="0.84313725490196079" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bYd-wz-b6d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6DF-bc-70i"/>
                             <constraint firstItem="SyG-xR-K5f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7uo-2m-hb3"/>
@@ -83,37 +86,39 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NAO-jc-gct">
-                                            <rect key="frame" x="40" y="115" width="520" height="29"/>
+                                            <rect key="frame" x="20" y="115" width="560" height="29"/>
                                             <segments>
                                                 <segment title="Tutorials"/>
                                                 <segment title="Videos"/>
                                                 <segment title="Meetups"/>
                                             </segments>
-                                            <color key="tintColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="segmentedControlSelected:" destination="ipM-e0-NNu" eventType="valueChanged" id="sLl-jD-WwX"/>
                                             </connections>
                                         </segmentedControl>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCs-fD-UVx">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCs-fD-UVx">
                                             <rect key="frame" x="557" y="25" width="35" height="35"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="Kuj-d9-xaj"/>
                                                 <constraint firstAttribute="width" constant="35" id="qyh-Il-eMY"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <state key="normal" title="+"/>
+                                            <color key="tintColor" red="0.16078431369999999" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="NqH-V7-Zkc" kind="presentation" id="TGW-ui-cYc"/>
                                             </connections>
                                         </button>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QCU-uX-dDc">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QCU-uX-dDc">
                                             <rect key="frame" x="73" y="34" width="453" height="68"/>
-                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                            <string key="text">“The beautiful thing about learning is that no one can take it away from you.” 
+― B.B. King</string>
+                                            <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search for something specific" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lba-Wn-Gib">
-                                            <rect key="frame" x="40" y="158" width="520" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search for something specific" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lba-Wn-Gib">
+                                            <rect key="frame" x="20" y="158" width="560" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -123,6 +128,7 @@
                                                 <constraint firstAttribute="height" constant="35" id="X6R-Cy-Eps"/>
                                                 <constraint firstAttribute="width" constant="35" id="d7p-rJ-cMd"/>
                                             </constraints>
+                                            <color key="tintColor" red="0.91372549020000005" green="0.84313725490000002" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" image="search_icon2"/>
                                         </button>
                                     </subviews>
@@ -133,13 +139,13 @@
                                         <constraint firstItem="QCU-uX-dDc" firstAttribute="leading" secondItem="7Tg-ZP-oYY" secondAttribute="leading" constant="73" id="85U-tK-rHS"/>
                                         <constraint firstItem="lba-Wn-Gib" firstAttribute="top" secondItem="NAO-jc-gct" secondAttribute="bottom" constant="15" id="IFK-pR-xeU"/>
                                         <constraint firstItem="eCs-fD-UVx" firstAttribute="leading" secondItem="QCU-uX-dDc" secondAttribute="trailing" constant="31" id="JiK-hD-nU5"/>
-                                        <constraint firstItem="NAO-jc-gct" firstAttribute="leading" secondItem="7Tg-ZP-oYY" secondAttribute="leading" constant="40" id="S9W-dx-4Fj"/>
-                                        <constraint firstAttribute="trailing" secondItem="lba-Wn-Gib" secondAttribute="trailing" constant="40" id="UtV-Ra-3nS"/>
+                                        <constraint firstItem="NAO-jc-gct" firstAttribute="leading" secondItem="7Tg-ZP-oYY" secondAttribute="leading" constant="20" id="S9W-dx-4Fj"/>
+                                        <constraint firstAttribute="trailing" secondItem="lba-Wn-Gib" secondAttribute="trailing" constant="20" id="UtV-Ra-3nS"/>
                                         <constraint firstItem="YuE-bk-SER" firstAttribute="top" secondItem="7Tg-ZP-oYY" secondAttribute="top" constant="25" id="a2T-uc-2Xi"/>
-                                        <constraint firstAttribute="trailing" secondItem="NAO-jc-gct" secondAttribute="trailing" constant="40" id="dDK-tO-cUK"/>
+                                        <constraint firstAttribute="trailing" secondItem="NAO-jc-gct" secondAttribute="trailing" constant="20" id="dDK-tO-cUK"/>
                                         <constraint firstItem="QCU-uX-dDc" firstAttribute="top" secondItem="7Tg-ZP-oYY" secondAttribute="top" constant="34" id="edw-6b-aNW"/>
                                         <constraint firstItem="eCs-fD-UVx" firstAttribute="top" secondItem="7Tg-ZP-oYY" secondAttribute="top" constant="25" id="qvj-eC-QYX"/>
-                                        <constraint firstItem="lba-Wn-Gib" firstAttribute="leading" secondItem="7Tg-ZP-oYY" secondAttribute="leading" constant="40" id="r8h-mM-HhR"/>
+                                        <constraint firstItem="lba-Wn-Gib" firstAttribute="leading" secondItem="7Tg-ZP-oYY" secondAttribute="leading" constant="20" id="r8h-mM-HhR"/>
                                         <constraint firstAttribute="trailing" secondItem="eCs-fD-UVx" secondAttribute="trailing" constant="8" id="vDu-3P-PJd"/>
                                         <constraint firstItem="NAO-jc-gct" firstAttribute="top" secondItem="QCU-uX-dDc" secondAttribute="bottom" constant="13" id="yVa-gs-giK"/>
                                     </constraints>
@@ -446,7 +452,7 @@
                                                 <constraint firstAttribute="width" constant="70" id="zBR-CZ-Pkv"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82T-Zh-DPj">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82T-Zh-DPj">
                                             <rect key="frame" x="557" y="25" width="35" height="35"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -455,8 +461,7 @@
                                                 <constraint firstAttribute="width" constant="35" id="R6k-NG-N5L"/>
                                                 <constraint firstAttribute="height" constant="35" id="gfO-Y9-nfM"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <state key="normal" title="+"/>
+                                            <color key="tintColor" red="0.16078431369999999" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="731-iY-PUG"/>
@@ -467,7 +472,7 @@
                                                 <segue destination="NqH-V7-Zkc" kind="presentation" id="HiH-xw-dnC"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userSkillLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFm-0w-aeA">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="userSkillLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFm-0w-aeA">
                                             <rect key="frame" x="120" y="134" width="360" height="25"/>
                                             <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="25"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -484,6 +489,7 @@
                                                 <constraint firstAttribute="width" constant="35" id="PXx-WD-I4C"/>
                                                 <constraint firstAttribute="height" constant="35" id="r1k-1U-Ehp"/>
                                             </constraints>
+                                            <color key="tintColor" red="0.91372549020000005" green="0.84313725490000002" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="M60-Va-YGV"/>
@@ -503,7 +509,7 @@
                                                 <action selector="photoButtonTapped:" destination="gYd-iY-INe" eventType="touchUpInside" id="zfW-YU-at0"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="usernameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8q-Ur-bxi">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="usernameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8q-Ur-bxi">
                                             <rect key="frame" x="120" y="103" width="360" height="26"/>
                                             <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

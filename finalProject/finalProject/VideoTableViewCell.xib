@@ -51,6 +51,7 @@
                     <constraint firstAttribute="trailing" secondItem="1Sf-Ji-9oI" secondAttribute="trailing" constant="20" id="zpv-12-Bkf"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="descriptionLabel" destination="1Sf-Ji-9oI" id="9iK-nK-obg"/>
                 <outlet property="thumbnailImageView" destination="Nhs-pt-czD" id="QYq-14-4zK"/>
