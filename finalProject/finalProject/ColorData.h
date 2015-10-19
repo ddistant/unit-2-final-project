@@ -28,4 +28,12 @@
 @property (nonatomic) UIColor *oceanTeal;
 @property (nonatomic) UIColor *chartreuseYel;
 
++ (ColorData *)sharedModel;
+
+-(void)initializeColorData;
+
++(UIColor *)makeColorWithRed:(NSInteger)red
+                       green:(NSInteger)green
+                        blue:(NSInteger)blue;
+
 @end

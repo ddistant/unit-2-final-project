@@ -11,6 +11,7 @@
 #import "Learner.h"
 #import "Skill.h"
 #import "JournalEntry.h"
+#import "ColorData.h"
 
 @interface AppDelegate ()
 
@@ -58,8 +59,9 @@
         
     }
 
-    
-    
+    [[UITabBar appearance] setTintColor:[ColorData sharedModel].oceanTeal];
+ 
+     
     //Just checking to see if we're hooked up with Parse.
     
 //    Learner *parseTestLearner = [[Learner alloc] init];
