@@ -59,6 +59,8 @@
         
     }
 
+    //setting the tint color of the tab bar
+    
     [[UITabBar appearance] setTintColor:[ColorData sharedModel].oceanTeal];
  
      
