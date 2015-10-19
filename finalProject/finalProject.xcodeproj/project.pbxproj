@@ -37,6 +37,7 @@
 		6BB458811BC9C096007D6E0B /* ComposePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB458801BC9C096007D6E0B /* ComposePostViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6BB458841BC9C0B9007D6E0B /* InspirationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB458831BC9C0B9007D6E0B /* InspirationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6BB458871BC9C0DA007D6E0B /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB458861BC9C0DA007D6E0B /* VideoDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6BE375121BD5B02C00D39DFB /* ColorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE375111BD5B02C00D39DFB /* ColorData.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,8 @@
 		6BB458831BC9C0B9007D6E0B /* InspirationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspirationViewController.m; sourceTree = "<group>"; };
 		6BB458851BC9C0DA007D6E0B /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
 		6BB458861BC9C0DA007D6E0B /* VideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailViewController.m; sourceTree = "<group>"; };
+		6BE375101BD5B02C00D39DFB /* ColorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorData.h; sourceTree = "<group>"; };
+		6BE375111BD5B02C00D39DFB /* ColorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorData.m; sourceTree = "<group>"; };
 		8234ABF4A30E2B36BAF66C1F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8317A631B70477E87AAE8C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BF451388368700F94B872005 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 			children = (
 				227CC25A1BC9792200C31F8F /* AppDelegate.h */,
 				227CC25B1BC9792200C31F8F /* AppDelegate.m */,
+				6BE375101BD5B02C00D39DFB /* ColorData.h */,
+				6BE375111BD5B02C00D39DFB /* ColorData.m */,
 				6B006F4F1BCAC82600D5CE25 /* Learner.h */,
 				6B006F501BCAC82600D5CE25 /* Learner.m */,
 				6B006F521BCAC83A00D5CE25 /* Skill.h */,
@@ -330,6 +335,7 @@
 				227CC2651BC9792200C31F8F /* finalProject.xcdatamodeld in Sources */,
 				6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */,
 				6BA37E3F1BD17AD00079CB96 /* MeetUpResult.m in Sources */,
+				6BE375121BD5B02C00D39DFB /* ColorData.m in Sources */,
 				6B9B1A8B1BD3EBB200F5D995 /* JournalEntryTableViewCell.m in Sources */,
 				6BA37E4D1BD196780079CB96 /* VideoResult.m in Sources */,
 				6B8D69841BD1AAD1004327C4 /* CourseTableViewCell.m in Sources */,
