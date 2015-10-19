@@ -25,28 +25,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bYd-wz-b6d">
+                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HR-Knowledge-Head" translatesAutoresizingMaskIntoConstraints="NO" id="Ze1-N7-MOm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What skill are you learning?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bYd-wz-b6d">
                                 <rect key="frame" x="40" y="285" width="520" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What skill are you learning?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0p-VP-kbN">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What skill are you learning?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0p-VP-kbN">
                                 <rect key="frame" x="20" y="192" width="560" height="24"/>
                                 <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyG-xR-K5f">
-                                <rect key="frame" x="280" y="349" width="41" height="46"/>
+                                <rect key="frame" x="279" y="349" width="44" height="42"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="28"/>
+                                <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="30"/>
                                 <state key="normal" title="GO"/>
                                 <connections>
                                     <action selector="goButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddD-Vz-txq"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.9137254901960784" green="0.84313725490196079" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ze1-N7-MOm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2VZ-7e-U7p"/>
                             <constraint firstItem="bYd-wz-b6d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6DF-bc-70i"/>
                             <constraint firstItem="SyG-xR-K5f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7uo-2m-hb3"/>
                             <constraint firstItem="O0p-VP-kbN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="A60-fd-pHE"/>
@@ -55,8 +59,19 @@
                             <constraint firstAttribute="trailing" secondItem="bYd-wz-b6d" secondAttribute="trailing" constant="40" id="Q9D-fi-qLt"/>
                             <constraint firstItem="bYd-wz-b6d" firstAttribute="top" secondItem="O0p-VP-kbN" secondAttribute="bottom" constant="69" id="Wau-5I-iug"/>
                             <constraint firstItem="SyG-xR-K5f" firstAttribute="top" secondItem="bYd-wz-b6d" secondAttribute="bottom" constant="34" id="hFf-n1-1Kp"/>
+                            <constraint firstItem="Ze1-N7-MOm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jVa-83-Pgm"/>
+                            <constraint firstItem="O0p-VP-kbN" firstAttribute="top" secondItem="Ze1-N7-MOm" secondAttribute="bottom" id="lu6-4e-xBA"/>
+                            <constraint firstItem="Ze1-N7-MOm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="o17-tP-5a2"/>
+                            <constraint firstAttribute="bottom" secondItem="Ze1-N7-MOm" secondAttribute="bottom" id="t3y-LI-znS"/>
+                            <constraint firstAttribute="trailing" secondItem="Ze1-N7-MOm" secondAttribute="trailing" id="unL-TU-pK3"/>
                             <constraint firstItem="bYd-wz-b6d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="y2e-qH-yVj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2VZ-7e-U7p"/>
+                                <exclude reference="lu6-4e-xBA"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="textField" destination="bYd-wz-b6d" id="rlK-jh-9xC"/>
@@ -606,6 +621,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="HR-Knowledge-Head" width="2677" height="2722"/>
         <image name="avatar_icon" width="256" height="256"/>
         <image name="camera_icon" width="128" height="128"/>
         <image name="school_logo_icon" width="500" height="500"/>

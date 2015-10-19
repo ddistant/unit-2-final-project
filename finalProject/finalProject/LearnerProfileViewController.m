@@ -25,6 +25,8 @@ UINavigationControllerDelegate
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) UIImagePickerController *imagePicker;
 
+@property (nonatomic) JournalEntryTableViewCell *testCell;
+
 @end
 
 @implementation LearnerProfileViewController
@@ -37,14 +39,8 @@ UINavigationControllerDelegate
     
     self.learner = [[Learner alloc] init];
     [self.learner loadLearnerSkill];
-    [JournalEntry fetchAll:^(NSArray *results, NSError *error) {
-        self.learner.journalEntries = [NSMutableArray arrayWithArray:results];
-        [self.tableView reloadData];
-    }];
     
-    [self setUpUI];
-    
-    [self setUpCustomTableViewCells];
+   
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -58,6 +54,14 @@ UINavigationControllerDelegate
         
         [self.tableView reloadData];
     }];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self setUpUI];
+    [self setUpCustomTableViewCells];
+    
 }
 
 - (IBAction)photoButtonTapped:(id)sender {
@@ -118,10 +122,14 @@ UINavigationControllerDelegate
     self.learnerSkillLabel.text = self.learner.skill.skillName;
     
     if ([self.learner.learnerName isEqualToString:@""]) {
+        
         self.learnerUsernameLabel.text = @"Set a username";
+    
     } else {
+        
         self.learner.learnerName = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
         self.learnerUsernameLabel.text = self.learner.learnerName;
+    
     }
 }
 
@@ -137,9 +145,30 @@ UINavigationControllerDelegate
     
     [self.tableView registerNib: journalEntryNib forCellReuseIdentifier:@"JournalEntryCellIdentifier"];
     [self.tableView registerNib:journalEntryHeader forHeaderFooterViewReuseIdentifier:@"JournalEntryHeaderIdentifier"];
+    
+    //self.testCell = [journalEntryNib instantiateWithOwner:nil options:nil][0];
 }
 
 #pragma mark - tableView data source methods
+
+//- (void)configureCell:(JournalEntryTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+//    
+//    JournalEntry *journalEntry = self.learner.journalEntries[indexPath.section];
+//    
+//    //cell.journalEntryLabel.text = journalEntry.entryText;
+//    
+//}
+//
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    //[self configureCell:self.testCell atIndexPath:indexPath];
+//    //[self.testCell layoutSubviews];
+//    
+//    CGFloat height = [self.testCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+//    
+//    return height + 1;
+//}
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
@@ -172,12 +201,11 @@ UINavigationControllerDelegate
     
     JournalEntry *journalEntry = self.learner.journalEntries[indexPath.section];
     
-    //cell.journalEntryImageView.image = nil;
     
     if (journalEntry.entryText != nil) {
         
         cell.journalEntryLabel.text = journalEntry.entryText;
-    
+        
     }
     
     if (journalEntry.entryPhoto != nil) {
@@ -185,13 +213,20 @@ UINavigationControllerDelegate
         [journalEntry.entryPhoto getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             
             if (!error) {
+                
                 cell.journalEntryImageView.image = [UIImage imageWithData:data];
             }
         }];
-
+        
+        
     }else {
         
+        [self.view addSubview:cell.journalEntryImageView];
+        //[self.view addSubview:cell.journalEntryLabel];
+        
         cell.journalEntryImageView.frame = CGRectZero;
+        //[cell.journalEntryLabel sizeToFit];
+        
     }
     
     return cell;
