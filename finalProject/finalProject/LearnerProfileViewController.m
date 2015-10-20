@@ -9,6 +9,7 @@
 #import "LearnerProfileViewController.h"
 #import "JournalEntryTableViewCell.h"
 #import "JournalEntryHeaderView.h"
+#import "ColorData.h"
 
 
 @interface LearnerProfileViewController ()
@@ -156,6 +157,7 @@ UINavigationControllerDelegate
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 100;
+    self.tableView.backgroundColor = [ColorData sharedModel].icicleGry;
     
     UINib *journalEntryNib = [UINib nibWithNibName:@"JournalEntryTableViewCell" bundle:nil];
     UINib *journalEntryHeader = [UINib nibWithNibName:@"JournalEntryHeaderView" bundle:nil];
