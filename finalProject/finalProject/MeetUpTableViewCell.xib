@@ -38,7 +38,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIK-I7-8Vy">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIK-I7-8Vy">
                         <rect key="frame" x="20" y="90" width="402" height="139"/>
                         <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

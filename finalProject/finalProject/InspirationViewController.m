@@ -257,6 +257,12 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         
         [self instantiateVideoDetailController];
     }
+    else if (self.segmentedControl.selectedSegmentIndex == 2) {
+        
+        MeetUpResult *event = self.meetupSearchResults[indexPath.row];
+
+        [[UIApplication sharedApplication] openURL:event.eventURLLabel];
+    }
 }
 
 
@@ -385,5 +391,7 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     self.refineSearchTextField.hidden = NO;
     
 }
+
+
 
 @end

@@ -24,7 +24,7 @@
         self.locationName = json[@"venue"][@"name"];
         self.locationAddress = json[@"venue"][@"address_1"];
         
-        self.eventURLLabel = json[@"event_url"];
+        self.eventURLLabel = [NSURL URLWithString:json[@"event_url"]];
         
         return self;
         
