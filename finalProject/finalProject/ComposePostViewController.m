@@ -7,6 +7,7 @@
 //
 
 #import "ComposePostViewController.h"
+#import "ColorData.h"
 
 @interface ComposePostViewController () <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (nonatomic) UIImagePickerController *imagePicker;
 @property (weak, nonatomic) IBOutlet UIImageView *cameraIconImageView;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end
 
@@ -33,6 +36,20 @@
     [self.addPhotoButton setHidden:NO];
     [self.addPhotoButton setUserInteractionEnabled:YES];
     [self.cameraIconImageView setHidden:NO];
+    
+    [self setUpUI];
+}
+
+-(void)setUpUI{
+    
+    self.titleTextField.font = [UIFont fontWithName:@"TikalSansMedium" size:15];
+    self.textView.font = [UIFont fontWithName:@"TikalSansMedium" size:15];
+
+    [self.saveButton.titleLabel setFont: [UIFont fontWithName:@"TikalSansMedium" size:20]];
+    [self.cancelButton.titleLabel setFont:[UIFont fontWithName:@"TikalSansMedium" size:18]];
+    
+    [self.saveButton setTitleColor:[ColorData sharedModel].chartreuseYel forState:UIControlStateNormal];
+    [self.cancelButton setTitleColor:[ColorData sharedModel].icicleGry forState:UIControlStateNormal];
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
@@ -85,22 +102,21 @@
 
 - (IBAction)saveButtonTapped:(id)sender {
     
-    JournalEntry *post = [[JournalEntry alloc] init];
-    post.entryTimestamp = [NSDate date];
-    post.entryTitle = self.titleTextField.text;
-    post.entryText = self.textView.text;
-    
-    if (self.photoImageView.image != nil){
+    if (self.photoImageView.image != nil  && ![self.titleTextField.text isEqualToString:@""] && ![self.textView.text isEqualToString:@""]){
         
+        JournalEntry *post = [[JournalEntry alloc] init];
+        post.entryTimestamp = [NSDate date];
+        post.entryTitle = self.titleTextField.text;
+        post.entryText = self.textView.text;
         
         NSData *imageData = UIImageJPEGRepresentation(self.photoImageView.image, 0.5f);
         post.entryPhoto = [PFFile fileWithData:imageData];
-
+        
+        [post saveInBackground];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
     }
-    
-    [post saveInBackground];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

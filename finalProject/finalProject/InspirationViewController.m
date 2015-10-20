@@ -19,6 +19,7 @@
 #import "VideoTableViewCell.h"
 #import "NSString+NSString_Sanitize.h"
 #import "Quotes.h"
+#import "ColorData.h"
 
 const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 
@@ -76,6 +77,7 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     [super viewWillAppear:YES];
     
     self.refineSearchTextField.hidden = YES;
+    self.refineSearchTextField.font = [UIFont fontWithName:@"TikalSansMedium" size:15];
     
     [self randomQuotes];
 }
@@ -95,6 +97,8 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 }
 
 -(void)setUpTableView{
+    
+    self.tableView.backgroundColor = [ColorData sharedModel].icicleGry;
     
     //tell the table view to auto adjust the height of each cell
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -405,9 +409,8 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 }
 
 - (IBAction)refineSearchButtonTapped:(UIButton *)sender {
-    
-    self.refineSearchTextField.hidden = NO;
-    
+        
+        self.refineSearchTextField.hidden = NO;
 }
 
 
