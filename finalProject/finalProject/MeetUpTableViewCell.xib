@@ -11,6 +11,9 @@
             <string>TikalSansMedium</string>
             <string>TikalSansMedium</string>
             <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -23,14 +26,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="442" height="335"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q5-eT-DpJ">
-                        <rect key="frame" x="20" y="32" width="402" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="event name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q5-eT-DpJ">
+                        <rect key="frame" x="81" y="32" width="341" height="20"/>
                         <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="20"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="group name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waq-2u-V8G">
-                        <rect key="frame" x="20" y="60" width="402" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="group name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waq-2u-V8G">
+                        <rect key="frame" x="81" y="60" width="341" height="18"/>
                         <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="18"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -53,34 +56,79 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="event url" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVp-mx-Wh6">
-                        <rect key="frame" x="20" y="301" width="402" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.eventURLhere.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVp-mx-Wh6">
+                        <rect key="frame" x="71" y="301" width="351" height="18"/>
                         <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="18"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4L-gc-QiS">
+                        <rect key="frame" x="20" y="60" width="58" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="58" id="grG-k8-hQN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="17"/>
+                        <color key="textColor" red="0.16078431369999999" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RSVP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAl-ka-feZ">
+                        <rect key="frame" x="20" y="302" width="48" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="6SL-Yh-5p7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="17"/>
+                        <color key="textColor" red="0.16078431372549018" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSl-ca-1CH">
+                        <rect key="frame" x="20" y="34" width="58" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="58" id="SEr-RK-mzU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="17"/>
+                        <color key="textColor" red="1" green="0.52156862745098043" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="P4L-gc-QiS" firstAttribute="centerY" secondItem="waq-2u-V8G" secondAttribute="centerY" id="24s-ki-rOW"/>
                     <constraint firstItem="F76-2j-RK5" firstAttribute="top" secondItem="yIK-I7-8Vy" secondAttribute="bottom" constant="16" id="2GY-XM-UWv"/>
                     <constraint firstAttribute="trailing" secondItem="waq-2u-V8G" secondAttribute="trailing" constant="20" id="57r-Jf-a2E"/>
                     <constraint firstItem="vVp-mx-Wh6" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="6Se-6l-y6C"/>
+                    <constraint firstItem="P4L-gc-QiS" firstAttribute="top" secondItem="JSl-ca-1CH" secondAttribute="bottom" constant="9" id="6vr-Ti-x3Y"/>
+                    <constraint firstItem="P4L-gc-QiS" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="9fa-ru-DTX"/>
                     <constraint firstItem="yIK-I7-8Vy" firstAttribute="top" secondItem="waq-2u-V8G" secondAttribute="bottom" constant="12" id="Ap5-Me-GEJ"/>
+                    <constraint firstItem="JSl-ca-1CH" firstAttribute="top" secondItem="0Sh-Oj-jOF" secondAttribute="top" constant="34" id="EO9-Kx-xyO"/>
                     <constraint firstItem="5Q5-eT-DpJ" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="F8l-Aa-0HJ"/>
                     <constraint firstItem="waq-2u-V8G" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="FOl-F9-Lmq"/>
+                    <constraint firstAttribute="bottom" secondItem="qAl-ka-feZ" secondAttribute="bottom" constant="16" id="JKQ-Qo-sgy"/>
                     <constraint firstAttribute="trailing" secondItem="0Im-ei-M0p" secondAttribute="trailing" constant="20" id="KBB-yL-sLl"/>
                     <constraint firstItem="0Im-ei-M0p" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="RC5-h5-lCk"/>
                     <constraint firstAttribute="trailing" secondItem="vVp-mx-Wh6" secondAttribute="trailing" constant="20" id="V5C-Fy-Fg2"/>
+                    <constraint firstItem="vVp-mx-Wh6" firstAttribute="leading" secondItem="qAl-ka-feZ" secondAttribute="trailing" constant="3" id="Vdn-vM-5ex"/>
+                    <constraint firstItem="waq-2u-V8G" firstAttribute="leading" secondItem="P4L-gc-QiS" secondAttribute="trailing" constant="3" id="W8P-xf-MeV"/>
                     <constraint firstItem="F76-2j-RK5" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="Wtb-Tm-dP2"/>
                     <constraint firstItem="0Im-ei-M0p" firstAttribute="top" secondItem="F76-2j-RK5" secondAttribute="bottom" constant="8" id="Xk1-vc-trC"/>
                     <constraint firstAttribute="trailing" secondItem="yIK-I7-8Vy" secondAttribute="trailing" constant="20" id="b2G-1w-5qJ"/>
+                    <constraint firstItem="JSl-ca-1CH" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="b6N-4c-KcH"/>
                     <constraint firstItem="vVp-mx-Wh6" firstAttribute="top" secondItem="0Im-ei-M0p" secondAttribute="bottom" constant="15" id="bai-jS-zeP"/>
+                    <constraint firstItem="qAl-ka-feZ" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="feJ-GI-fhu"/>
                     <constraint firstAttribute="trailing" secondItem="F76-2j-RK5" secondAttribute="trailing" constant="20" id="gPX-y2-OBZ"/>
                     <constraint firstItem="5Q5-eT-DpJ" firstAttribute="top" secondItem="0Sh-Oj-jOF" secondAttribute="top" constant="32" id="jV1-es-rDV"/>
+                    <constraint firstItem="5Q5-eT-DpJ" firstAttribute="leading" secondItem="JSl-ca-1CH" secondAttribute="trailing" constant="3" id="pF4-Cy-ybT"/>
                     <constraint firstAttribute="bottom" secondItem="vVp-mx-Wh6" secondAttribute="bottom" constant="16" id="pb9-kh-x4v"/>
                     <constraint firstItem="yIK-I7-8Vy" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="t88-JR-WBJ"/>
                     <constraint firstAttribute="trailing" secondItem="5Q5-eT-DpJ" secondAttribute="trailing" constant="20" id="vTc-bd-8sE"/>
                     <constraint firstItem="waq-2u-V8G" firstAttribute="top" secondItem="5Q5-eT-DpJ" secondAttribute="bottom" constant="8" id="zNR-Fb-YdE"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="6vr-Ti-x3Y"/>
+                        <exclude reference="F8l-Aa-0HJ"/>
+                        <exclude reference="FOl-F9-Lmq"/>
+                        <exclude reference="6Se-6l-y6C"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
             <connections>

@@ -26,12 +26,32 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UIButton *refineSearchButton;
+@property (weak, nonatomic) IBOutlet UITextField *refineSearchTextField;
 
 @property (nonatomic) NSMutableArray *results;
 
 @end
 
 @implementation InspirationViewController
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        
+        // non-selected tab bar image
+        UIImage *defaultImage = [[UIImage imageNamed:@"Idea-teal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        // selected tab bar image
+        UIImage *selectedImage = [[UIImage imageNamed:@"Idea Filled-teal"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        // set the tab bar item with a title and both images
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Inspiration" image:defaultImage selectedImage:selectedImage];
+        
+        return self;
+    }
+    return nil;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,6 +66,12 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     [self fetchCourseraData];
     [self fetchMeetupData];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+    self.refineSearchTextField.hidden = YES;
 }
 
 #pragma mark - set up UI
@@ -354,5 +380,10 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     
 }
 
+- (IBAction)refineSearchButtonTapped:(UIButton *)sender {
+    
+    self.refineSearchTextField.hidden = NO;
+    
+}
 
 @end
