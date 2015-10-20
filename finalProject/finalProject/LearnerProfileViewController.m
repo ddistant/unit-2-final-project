@@ -12,7 +12,6 @@
 #import "ColorData.h"
 
 
-
 @interface LearnerProfileViewController ()
 <
 UITableViewDelegate,
@@ -58,8 +57,6 @@ UINavigationControllerDelegate
     
     self.learner = [[Learner alloc] init];
     [self.learner loadLearnerSkill];
-    
- 
 
 }
 
@@ -283,12 +280,13 @@ UINavigationControllerDelegate
     JournalEntry *journalEntry = self.learner.journalEntries[section];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+    [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
     NSString *formattedDateString = [dateFormatter stringFromDate:journalEntry.entryTimestamp];
     NSString *timestampString = [NSString stringWithFormat:@"%@", formattedDateString];
     
     headerView.titleLabel.text = journalEntry.entryTitle;
     headerView.timestampLabel.text = timestampString;
+   
     
     return headerView;
 }

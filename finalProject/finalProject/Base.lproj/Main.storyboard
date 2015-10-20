@@ -473,12 +473,17 @@
                                     <rect key="frame" x="0.0" y="20" width="600" height="179"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_icon" translatesAutoresizingMaskIntoConstraints="NO" id="fzF-4S-CrD">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_icon" translatesAutoresizingMaskIntoConstraints="NO" id="fzF-4S-CrD">
                                             <rect key="frame" x="265" y="40" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="3eJ-PT-LTn"/>
                                                 <constraint firstAttribute="width" constant="70" id="zBR-CZ-Pkv"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="35"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userSkillLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFm-0w-aeA">
                                             <rect key="frame" x="230" y="137" width="140" height="22"/>
@@ -542,12 +547,20 @@
                                                 <segue destination="NqH-V7-Zkc" kind="presentation" id="HiH-xw-dnC"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryi-RP-ZcS">
+                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryi-RP-ZcS">
                                             <rect key="frame" x="265" y="40" width="70" height="70"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                            </accessibility>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="AXu-mj-tTB"/>
                                                 <constraint firstAttribute="height" constant="70" id="rWb-MF-gib"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="35"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="photoButtonTapped:" destination="gYd-iY-INe" eventType="touchUpInside" id="zfW-YU-at0"/>
                                             </connections>
@@ -670,6 +683,6 @@
         <image name="school_logo_icon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TGW-ui-cYc"/>
+        <segue reference="HiH-xw-dnC"/>
     </inferredMetricsTieBreakers>
 </document>
