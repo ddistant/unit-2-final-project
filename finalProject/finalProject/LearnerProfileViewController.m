@@ -190,32 +190,27 @@ UINavigationControllerDelegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    if (self.learner.journalEntries.count < 1) {
+    if (self.learner.journalEntries.count) {
         
-        return 0;
+        return self.learner.journalEntries.count;
         
     }else {
         
-        return self.learner.journalEntries.count;
+        return 0;
     }
     
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    if (self.learner.journalEntries.count < 1) {
-        
-        return 0;
-        
-    }else {
         
         return 1;
-    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     JournalEntryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JournalEntryCellIdentifier" forIndexPath:indexPath];
+    
+    if (self.learner.journalEntries.count){
     
     JournalEntry *journalEntry = self.learner.journalEntries[indexPath.section];
     
@@ -246,6 +241,7 @@ UINavigationControllerDelegate
         //[cell.journalEntryLabel sizeToFit];
         
     }
+    }
     
     return cell;
 }
@@ -257,14 +253,47 @@ UINavigationControllerDelegate
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        PFObject *objectToDel = [self.learner.journalEntries objectAtIndex:indexPath.row];
+        
+        [tableView beginUpdates];
+        
         [self.learner.journalEntries removeObjectAtIndex:indexPath.row];
-        [tableView reloadData];
-        PFQuery *query = [PFQuery queryWithClassName:[JournalEntry parseClassName]];
-        [query whereKey:@"entryTitle" equalTo:[self.learner.journalEntries objectAtIndex:indexPath.row][@"entryTitle"]];
-        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            PFObject *object = objects[0];
-            [object deleteInBackground];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        // Section is now completely empty, so delete the entire section.
+        [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section]
+                 withRowAnimation:UITableViewRowAnimationFade];
+        
+        
+        [tableView endUpdates];
+        
+        
+        [objectToDel deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            
+            
+            if (succeeded){
+                
+                NSLog(@"Object successfully deleted.");
+                
+                
+            }else if (error){
+                
+                NSLog(@"Error");
+                
+            }
+            
+            [tableView reloadData];
+            
         }];
+        
+//        PFQuery *query = [PFQuery queryWithClassName:[JournalEntry parseClassName]];
+//        [query whereKey:@"entryTitle" equalTo:[self.learner.journalEntries objectAtIndex:indexPath.row][@"entryTitle"]];
+//        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//            PFObject *object = objects[0];
+//            [object deleteInBackground];
+//            [tableView reloadData];
+//        }];
     }
 }
 
