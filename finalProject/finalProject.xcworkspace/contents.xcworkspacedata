@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Quotes.h">
+   </FileRef>
+   <FileRef
+      location = "group:Quotes.m">
+   </FileRef>
+   <FileRef
       location = "group:finalProject.xcodeproj">
    </FileRef>
    <FileRef
