@@ -15,6 +15,7 @@
 		227CC26A1BC9792200C31F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 227CC2681BC9792200C31F8F /* LaunchScreen.storyboard */; };
 		2E4C1240B4B88ADA535632B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8234ABF4A30E2B36BAF66C1F /* libPods.a */; };
 		5182392E1BD19DDA00F44326 /* NSString+NSString_Sanitize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5182392D1BD19DDA00F44326 /* NSString+NSString_Sanitize.m */; settings = {ASSET_TAGS = (); }; };
+		518239461BD5FC8E00F44326 /* Quotes.m in Sources */ = {isa = PBXBuildFile; fileRef = 518239451BD5FC8E00F44326 /* Quotes.m */; settings = {ASSET_TAGS = (); }; };
 		6B006F511BCAC82600D5CE25 /* Learner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F501BCAC82600D5CE25 /* Learner.m */; settings = {ASSET_TAGS = (); }; };
 		6B006F541BCAC83A00D5CE25 /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F531BCAC83A00D5CE25 /* Skill.m */; settings = {ASSET_TAGS = (); }; };
 		6B006F571BCAC84F00D5CE25 /* JournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F561BCAC84F00D5CE25 /* JournalEntry.m */; settings = {ASSET_TAGS = (); }; };
@@ -52,6 +53,8 @@
 		227CC26B1BC9792200C31F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5182392C1BD19DDA00F44326 /* NSString+NSString_Sanitize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSString_Sanitize.h"; sourceTree = "<group>"; };
 		5182392D1BD19DDA00F44326 /* NSString+NSString_Sanitize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSString_Sanitize.m"; sourceTree = "<group>"; };
+		518239441BD5FC8E00F44326 /* Quotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quotes.h; path = ../Quotes.h; sourceTree = "<group>"; };
+		518239451BD5FC8E00F44326 /* Quotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quotes.m; path = ../Quotes.m; sourceTree = "<group>"; };
 		6B006F4F1BCAC82600D5CE25 /* Learner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Learner.h; sourceTree = "<group>"; };
 		6B006F501BCAC82600D5CE25 /* Learner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Learner.m; sourceTree = "<group>"; };
 		6B006F521BCAC83A00D5CE25 /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skill.h; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 				6BB4587A1BC9BF55007D6E0B /* WelcomeViewController.m */,
 				5182392C1BD19DDA00F44326 /* NSString+NSString_Sanitize.h */,
 				5182392D1BD19DDA00F44326 /* NSString+NSString_Sanitize.m */,
+				518239441BD5FC8E00F44326 /* Quotes.h */,
+				518239451BD5FC8E00F44326 /* Quotes.m */,
 				227CC2601BC9792200C31F8F /* Main.storyboard */,
 				227CC2661BC9792200C31F8F /* Assets.xcassets */,
 				227CC2681BC9792200C31F8F /* LaunchScreen.storyboard */,
@@ -323,6 +328,7 @@
 			files = (
 				6B9B1A891BD3EBB200F5D995 /* JournalEntryHeaderView.m in Sources */,
 				6BA37E4E1BD196780079CB96 /* VideoTableViewCell.m in Sources */,
+				518239461BD5FC8E00F44326 /* Quotes.m in Sources */,
 				6B8D69831BD1AAD1004327C4 /* CourseResult.m in Sources */,
 				6B006F511BCAC82600D5CE25 /* Learner.m in Sources */,
 				6BB458841BC9C0B9007D6E0B /* InspirationViewController.m in Sources */,

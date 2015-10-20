@@ -18,6 +18,7 @@
 #import "VideoResult.h"
 #import "VideoTableViewCell.h"
 #import "NSString+NSString_Sanitize.h"
+#import "Quotes.h"
 
 const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 
@@ -28,6 +29,7 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UIButton *refineSearchButton;
 @property (weak, nonatomic) IBOutlet UITextField *refineSearchTextField;
+@property (weak, nonatomic) IBOutlet UILabel *quotesLabel;
 
 @property (nonatomic) NSMutableArray *results;
 
@@ -66,15 +68,31 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     [self fetchCourseraData];
     [self fetchMeetupData];
     
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     
     self.refineSearchTextField.hidden = YES;
+    
+    [self randomQuotes];
 }
 
 #pragma mark - set up UI
+
+-(void)randomQuotes{
+    
+    Quotes *quoteArray = [[Quotes alloc] init];
+    
+    
+    u_int32_t rnd = arc4random_uniform((u_int32_t)[quoteArray.quotes count]);
+    NSLog(@"%@", @(rnd));
+    
+    
+    self.quotesLabel.text = [quoteArray.quotes objectAtIndex:rnd];
+}
 
 -(void)setUpTableView{
     

@@ -12,6 +12,7 @@
 #import "ColorData.h"
 
 
+
 @interface LearnerProfileViewController ()
 <
 UITableViewDelegate,
@@ -58,7 +59,8 @@ UINavigationControllerDelegate
     self.learner = [[Learner alloc] init];
     [self.learner loadLearnerSkill];
     
-   
+ 
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{

@@ -27,6 +27,8 @@
     
     self.learner = [[Learner alloc] init];
     
+    self.textField.font = [UIFont fontWithName:@"TikalSansMedium" size:15];
+    
 }
 
 
