@@ -10,6 +10,7 @@
 #import "WelcomeViewController.h"
 #import "LearnerProfileViewController.h"
 #import "Learner.h"
+#import "ColorData.h"
 
 @interface WelcomeViewController ()
 
@@ -17,6 +18,7 @@
 
 @property (nonatomic) Learner *learner;
 @property (nonatomic) NSString *learnerSkill;
+@property (weak, nonatomic) IBOutlet UIButton *goButton;
 
 @end
 
@@ -28,6 +30,8 @@
     self.learner = [[Learner alloc] init];
     
     self.textField.font = [UIFont fontWithName:@"TikalSansMedium" size:15];
+    
+    [self.goButton setTintColor:[ColorData sharedModel].oceanTeal];
     
 }
 
