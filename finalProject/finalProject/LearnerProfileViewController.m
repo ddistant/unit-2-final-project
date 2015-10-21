@@ -10,6 +10,7 @@
 #import "JournalEntryTableViewCell.h"
 #import "JournalEntryHeaderView.h"
 #import "ColorData.h"
+#import "NYAlertViewController.h"
 
 
 @interface LearnerProfileViewController ()
@@ -82,53 +83,116 @@ UINavigationControllerDelegate
 }
 
 - (IBAction)photoButtonTapped:(id)sender {
-    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message: nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction *setUsername = [UIAlertAction actionWithTitle:@"Set username" style:UIAlertActionStyleDefault
-                                                        handler:^(UIAlertAction * action) {
-                                                            
-                                                            [self setUsername];
-                                                        }];
-    
-    UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:@"Take photo" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    UIAlertAction *choosePhoto = [UIAlertAction actionWithTitle:@"Choose photo" style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction * action) {
-                                                      
-                                                          [self choosePhoto];
-                                                      }];
-    
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction * action) {}];
-    
-    
-    [actionSheet addAction:setUsername];
-    [actionSheet addAction:takePhoto];
-    [actionSheet addAction:choosePhoto];
-    [actionSheet addAction:cancel];
-    [self presentViewController:actionSheet animated:YES completion:nil];
+    [self showActionSheet];
 }
 
 - (void) setUsername {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Set username"
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    NYAlertViewController *alertViewController = [[NYAlertViewController alloc] initWithNibName:nil bundle:nil];
+    
+    // Set a title and message
+    alertViewController.title = NSLocalizedString(@"Username", nil);
+    alertViewController.message = nil;
+    
+    // Customize appearance as desired
+    alertViewController.buttonCornerRadius = 20.0f;
+    alertViewController.view.tintColor = self.view.tintColor;
+    
+    alertViewController.titleFont = [UIFont fontWithName:@"TikalSansMedium" size:19.0f];
+    alertViewController.messageFont = [UIFont fontWithName:@"TikalSansMedium" size:16.0f];
+    alertViewController.buttonTitleFont = [UIFont fontWithName:@"TikalSansMedium" size:alertViewController.buttonTitleFont.pointSize];
+    alertViewController.cancelButtonTitleFont = [UIFont fontWithName:@"TikalSansMedium" size:alertViewController.cancelButtonTitleFont.pointSize];
+    
+    alertViewController.swipeDismissalGestureEnabled = YES;
+    alertViewController.backgroundTapDismissalGestureEnabled = YES;
     
     __block UITextField *inputField;
-    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+    [alertViewController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         inputField = textField;
     }];
     
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {
+    // Add alert actions
+    [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(NYAlertAction *action) {
+                                                              
                                                               self.learnerUsernameLabel.text = inputField.text;
                                                               self.learner.learnerName = inputField.text;
                                                               [[NSUserDefaults standardUserDefaults] setObject:inputField.text forKey:@"username"];
-                                                          }];
+                                                              
+                                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                                              
+                                                          }]];
     
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    // Present the alert view controller
+    [self presentViewController:alertViewController animated:YES completion:nil];
+}
+
+#pragma mark - Custom Alert Controller
+
+-(void)showActionSheet{
+    
+    NYAlertViewController *alertViewController = [[NYAlertViewController alloc] initWithNibName:nil bundle:nil];
+    
+    // Set a title and message
+    alertViewController.title = nil;
+    alertViewController.message = nil;
+    
+    
+    // Customize appearance as desired
+    alertViewController.buttonCornerRadius = 20.0f;
+    alertViewController.view.tintColor = self.view.tintColor;
+    
+    alertViewController.titleFont = [UIFont fontWithName:@"TikalSansMedium" size:19.0f];
+    alertViewController.messageFont = [UIFont fontWithName:@"TikalSansMedium" size:16.0f];
+    alertViewController.buttonTitleFont = [UIFont fontWithName:@"TikalSansMedium" size:alertViewController.buttonTitleFont.pointSize];
+    alertViewController.cancelButtonTitleFont = [UIFont fontWithName:@"TikalSansMedium" size:alertViewController.cancelButtonTitleFont.pointSize];
+    
+    alertViewController.swipeDismissalGestureEnabled = YES;
+    alertViewController.backgroundTapDismissalGestureEnabled = YES;
+    
+    // Add alert actions
+    [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Set Username", nil)
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(NYAlertAction *action) {
+                                                              
+                                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                                              [self setUsername];
+                                                              
+                                                          }]];
+    
+    [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Take Photo", nil)
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(NYAlertAction *action) {
+                                                              
+                                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                                              [self takePhoto];
+                                                           
+                                                          }]];
+    
+    [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Choose Photo", nil)
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(NYAlertAction *action) {
+                                                              
+                                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                                              [self choosePhoto];
+                                                              
+                                                          }]];
+    
+    [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(NYAlertAction *action) {
+                                                              
+                                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                                          
+                                                          }]];
+
+    
+    // Present the alert view controller
+    [self presentViewController:alertViewController animated:YES completion:nil];
 }
 
 
@@ -287,13 +351,6 @@ UINavigationControllerDelegate
             
         }];
         
-//        PFQuery *query = [PFQuery queryWithClassName:[JournalEntry parseClassName]];
-//        [query whereKey:@"entryTitle" equalTo:[self.learner.journalEntries objectAtIndex:indexPath.row][@"entryTitle"]];
-//        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//            PFObject *object = objects[0];
-//            [object deleteInBackground];
-//            [tableView reloadData];
-//        }];
     }
 }
 
@@ -313,11 +370,6 @@ UINavigationControllerDelegate
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     NSString *formatterDateString = [dateFormatter stringFromDate:journalEntry.entryTimestamp];
     NSString *timestampString = [NSString stringWithFormat:@"%@", formatterDateString];
-    
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
-//    NSString *formattedDateString = [dateFormatter stringFromDate:journalEntry.entryTimestamp];
-//    NSString *timestampString = [NSString stringWithFormat:@"%@", formattedDateString];
     
     headerView.titleLabel.text = journalEntry.entryTitle;
     headerView.timestampLabel.text = timestampString;
