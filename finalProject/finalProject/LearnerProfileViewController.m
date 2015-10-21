@@ -309,9 +309,15 @@ UINavigationControllerDelegate
     JournalEntry *journalEntry = self.learner.journalEntries[section];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
-    NSString *formattedDateString = [dateFormatter stringFromDate:journalEntry.entryTimestamp];
-    NSString *timestampString = [NSString stringWithFormat:@"%@", formattedDateString];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSString *formatterDateString = [dateFormatter stringFromDate:journalEntry.entryTimestamp];
+    NSString *timestampString = [NSString stringWithFormat:@"%@", formatterDateString];
+    
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
+//    NSString *formattedDateString = [dateFormatter stringFromDate:journalEntry.entryTimestamp];
+//    NSString *timestampString = [NSString stringWithFormat:@"%@", formattedDateString];
     
     headerView.titleLabel.text = journalEntry.entryTitle;
     headerView.timestampLabel.text = timestampString;

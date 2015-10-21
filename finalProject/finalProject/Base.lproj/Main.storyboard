@@ -140,7 +140,7 @@
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akk-Gl-skN">
                                             <rect key="frame" x="57" y="35" width="486" height="77"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -684,6 +684,6 @@
         <image name="school_logo_icon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HiH-xw-dnC"/>
+        <segue reference="TGW-ui-cYc"/>
     </inferredMetricsTieBreakers>
 </document>
