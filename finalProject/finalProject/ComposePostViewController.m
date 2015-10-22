@@ -45,8 +45,8 @@
 -(void)setUpUI{
     
     self.titleTextField.font = [UIFont fontWithName:@"TikalSansMedium" size:15];
-    self.titleTextField.layer.borderColor = [UIColor colorWithRed:41/255.0 green:115/255.0 blue:115/255.0 alpha:1].CGColor;
-    self.titleTextField.layer.borderWidth = 2.0;
+//    self.titleTextField.layer.borderColor = [UIColor colorWithRed:41/255.0 green:115/255.0 blue:115/255.0 alpha:1].CGColor;
+//    self.titleTextField.layer.borderWidth = 2.0;
     
     self.textView.font = [UIFont fontWithName:@"TikalSansMedium" size:15];
 
