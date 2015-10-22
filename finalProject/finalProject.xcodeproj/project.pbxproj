@@ -19,6 +19,9 @@
 		6B006F511BCAC82600D5CE25 /* Learner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F501BCAC82600D5CE25 /* Learner.m */; settings = {ASSET_TAGS = (); }; };
 		6B006F541BCAC83A00D5CE25 /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F531BCAC83A00D5CE25 /* Skill.m */; settings = {ASSET_TAGS = (); }; };
 		6B006F571BCAC84F00D5CE25 /* JournalEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B006F561BCAC84F00D5CE25 /* JournalEntry.m */; settings = {ASSET_TAGS = (); }; };
+		6B80552D1BD874F5002A1415 /* NoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B80552C1BD874F5002A1415 /* NoResult.m */; settings = {ASSET_TAGS = (); }; };
+		6B80552F1BD876BA002A1415 /* MeetUp_NoLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B80552E1BD876BA002A1415 /* MeetUp_NoLocationTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		6B8055311BD87745002A1415 /* MeetUpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8055301BD87745002A1415 /* MeetUpTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		6B8D69831BD1AAD1004327C4 /* CourseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D697F1BD1AAD1004327C4 /* CourseResult.m */; settings = {ASSET_TAGS = (); }; };
 		6B8D69841BD1AAD1004327C4 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8D69811BD1AAD1004327C4 /* CourseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		6B8D69851BD1AAD1004327C4 /* CourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8D69821BD1AAD1004327C4 /* CourseTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -28,9 +31,13 @@
 		6B9B1A8C1BD3EBB200F5D995 /* JournalEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B1A881BD3EBB200F5D995 /* JournalEntryTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		6B9D0CF11BD8394600A1F565 /* NYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D0CEE1BD8394600A1F565 /* NYAlertView.m */; settings = {ASSET_TAGS = (); }; };
 		6B9D0CF21BD8394600A1F565 /* NYAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D0CF01BD8394600A1F565 /* NYAlertViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6B9D0D071BD84F0700A1F565 /* JournalEntryTextOnlyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D0D051BD84F0700A1F565 /* JournalEntryTextOnlyTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		6B9D0D081BD84F0700A1F565 /* JournalEntryTextOnlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D0D061BD84F0700A1F565 /* JournalEntryTextOnlyTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		6B9D0D0F1BD84F1D00A1F565 /* MeetUp_NoLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D0D0A1BD84F1D00A1F565 /* MeetUp_NoLocationTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		6B9D0D111BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D0D0D1BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		6B9D0D121BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D0D0E1BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		6BA37E3F1BD17AD00079CB96 /* MeetUpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */; settings = {ASSET_TAGS = (); }; };
 		6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		6BA37E411BD17AD00079CB96 /* MeetUpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		6BA37E431BD17E8B0079CB96 /* TikalSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6BA37E421BD17E670079CB96 /* TikalSans-Medium.otf */; };
 		6BA37E4D1BD196780079CB96 /* VideoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E491BD196780079CB96 /* VideoResult.m */; settings = {ASSET_TAGS = (); }; };
 		6BA37E4E1BD196780079CB96 /* VideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA37E4B1BD196780079CB96 /* VideoTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -63,6 +70,10 @@
 		6B006F531BCAC83A00D5CE25 /* Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skill.m; sourceTree = "<group>"; };
 		6B006F551BCAC84F00D5CE25 /* JournalEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalEntry.h; sourceTree = "<group>"; };
 		6B006F561BCAC84F00D5CE25 /* JournalEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalEntry.m; sourceTree = "<group>"; };
+		6B80552B1BD874F5002A1415 /* NoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoResult.h; sourceTree = "<group>"; };
+		6B80552C1BD874F5002A1415 /* NoResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoResult.m; sourceTree = "<group>"; };
+		6B80552E1BD876BA002A1415 /* MeetUp_NoLocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetUp_NoLocationTableViewCell.xib; sourceTree = "<group>"; };
+		6B8055301BD87745002A1415 /* MeetUpTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetUpTableViewCell.xib; sourceTree = "<group>"; };
 		6B8D697E1BD1AAD1004327C4 /* CourseResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseResult.h; sourceTree = "<group>"; };
 		6B8D697F1BD1AAD1004327C4 /* CourseResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseResult.m; sourceTree = "<group>"; };
 		6B8D69801BD1AAD1004327C4 /* CourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
@@ -78,11 +89,18 @@
 		6B9D0CEE1BD8394600A1F565 /* NYAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYAlertView.m; sourceTree = "<group>"; };
 		6B9D0CEF1BD8394600A1F565 /* NYAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYAlertViewController.h; sourceTree = "<group>"; };
 		6B9D0CF01BD8394600A1F565 /* NYAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYAlertViewController.m; sourceTree = "<group>"; };
+		6B9D0D041BD84F0600A1F565 /* JournalEntryTextOnlyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalEntryTextOnlyTableViewCell.h; sourceTree = "<group>"; };
+		6B9D0D051BD84F0700A1F565 /* JournalEntryTextOnlyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalEntryTextOnlyTableViewCell.m; sourceTree = "<group>"; };
+		6B9D0D061BD84F0700A1F565 /* JournalEntryTextOnlyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalEntryTextOnlyTableViewCell.xib; sourceTree = "<group>"; };
+		6B9D0D091BD84F1D00A1F565 /* MeetUp_NoLocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUp_NoLocationTableViewCell.h; sourceTree = "<group>"; };
+		6B9D0D0A1BD84F1D00A1F565 /* MeetUp_NoLocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetUp_NoLocationTableViewCell.m; sourceTree = "<group>"; };
+		6B9D0D0C1BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUp_NoneFoundTableViewCell.h; sourceTree = "<group>"; };
+		6B9D0D0D1BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetUp_NoneFoundTableViewCell.m; sourceTree = "<group>"; };
+		6B9D0D0E1BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetUp_NoneFoundTableViewCell.xib; sourceTree = "<group>"; };
 		6BA37E3A1BD17AD00079CB96 /* MeetUpResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUpResult.h; sourceTree = "<group>"; };
 		6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetUpResult.m; sourceTree = "<group>"; };
 		6BA37E3C1BD17AD00079CB96 /* MeetUpTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetUpTableViewCell.h; sourceTree = "<group>"; };
 		6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetUpTableViewCell.m; sourceTree = "<group>"; };
-		6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetUpTableViewCell.xib; sourceTree = "<group>"; };
 		6BA37E421BD17E670079CB96 /* TikalSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TikalSans-Medium.otf"; sourceTree = "<group>"; };
 		6BA37E481BD196780079CB96 /* VideoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoResult.h; sourceTree = "<group>"; };
 		6BA37E491BD196780079CB96 /* VideoResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoResult.m; sourceTree = "<group>"; };
@@ -149,14 +167,19 @@
 				6B006F531BCAC83A00D5CE25 /* Skill.m */,
 				6B006F551BCAC84F00D5CE25 /* JournalEntry.h */,
 				6B006F561BCAC84F00D5CE25 /* JournalEntry.m */,
-				6B8D697E1BD1AAD1004327C4 /* CourseResult.h */,
-				6B8D697F1BD1AAD1004327C4 /* CourseResult.m */,
 				6B9B1A831BD3EBB200F5D995 /* JournalEntryHeaderView.h */,
 				6B9B1A841BD3EBB200F5D995 /* JournalEntryHeaderView.m */,
 				6B9B1A851BD3EBB200F5D995 /* JournalEntryHeaderView.xib */,
+				6B9D0D041BD84F0600A1F565 /* JournalEntryTextOnlyTableViewCell.h */,
+				6B9D0D051BD84F0700A1F565 /* JournalEntryTextOnlyTableViewCell.m */,
+				6B9D0D061BD84F0700A1F565 /* JournalEntryTextOnlyTableViewCell.xib */,
 				6B9B1A861BD3EBB200F5D995 /* JournalEntryTableViewCell.h */,
 				6B9B1A871BD3EBB200F5D995 /* JournalEntryTableViewCell.m */,
 				6B9B1A881BD3EBB200F5D995 /* JournalEntryTableViewCell.xib */,
+				6B80552B1BD874F5002A1415 /* NoResult.h */,
+				6B80552C1BD874F5002A1415 /* NoResult.m */,
+				6B8D697E1BD1AAD1004327C4 /* CourseResult.h */,
+				6B8D697F1BD1AAD1004327C4 /* CourseResult.m */,
 				6B8D69801BD1AAD1004327C4 /* CourseTableViewCell.h */,
 				6B8D69821BD1AAD1004327C4 /* CourseTableViewCell.xib */,
 				6B8D69811BD1AAD1004327C4 /* CourseTableViewCell.m */,
@@ -164,7 +187,13 @@
 				6BA37E3B1BD17AD00079CB96 /* MeetUpResult.m */,
 				6BA37E3C1BD17AD00079CB96 /* MeetUpTableViewCell.h */,
 				6BA37E3D1BD17AD00079CB96 /* MeetUpTableViewCell.m */,
-				6BA37E3E1BD17AD00079CB96 /* MeetUpTableViewCell.xib */,
+				6B8055301BD87745002A1415 /* MeetUpTableViewCell.xib */,
+				6B9D0D091BD84F1D00A1F565 /* MeetUp_NoLocationTableViewCell.h */,
+				6B9D0D0A1BD84F1D00A1F565 /* MeetUp_NoLocationTableViewCell.m */,
+				6B80552E1BD876BA002A1415 /* MeetUp_NoLocationTableViewCell.xib */,
+				6B9D0D0C1BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.h */,
+				6B9D0D0D1BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.m */,
+				6B9D0D0E1BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.xib */,
 				6BA37E481BD196780079CB96 /* VideoResult.h */,
 				6BA37E491BD196780079CB96 /* VideoResult.m */,
 				6BA37E4A1BD196780079CB96 /* VideoTableViewCell.h */,
@@ -292,15 +321,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B9D0D121BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.xib in Resources */,
 				6BA37E431BD17E8B0079CB96 /* TikalSans-Medium.otf in Resources */,
 				6B9B1A8C1BD3EBB200F5D995 /* JournalEntryTableViewCell.xib in Resources */,
+				6B8055311BD87745002A1415 /* MeetUpTableViewCell.xib in Resources */,
 				227CC26A1BC9792200C31F8F /* LaunchScreen.storyboard in Resources */,
 				227CC2671BC9792200C31F8F /* Assets.xcassets in Resources */,
 				227CC2621BC9792200C31F8F /* Main.storyboard in Resources */,
 				6B9B1A8A1BD3EBB200F5D995 /* JournalEntryHeaderView.xib in Resources */,
+				6B80552F1BD876BA002A1415 /* MeetUp_NoLocationTableViewCell.xib in Resources */,
 				6B8D69851BD1AAD1004327C4 /* CourseTableViewCell.xib in Resources */,
-				6BA37E411BD17AD00079CB96 /* MeetUpTableViewCell.xib in Resources */,
 				6BA37E4F1BD196780079CB96 /* VideoTableViewCell.xib in Resources */,
+				6B9D0D081BD84F0700A1F565 /* JournalEntryTextOnlyTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,18 +376,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B9D0D071BD84F0700A1F565 /* JournalEntryTextOnlyTableViewCell.m in Sources */,
 				6B9B1A891BD3EBB200F5D995 /* JournalEntryHeaderView.m in Sources */,
 				6BA37E4E1BD196780079CB96 /* VideoTableViewCell.m in Sources */,
 				518239461BD5FC8E00F44326 /* Quotes.m in Sources */,
 				6B8D69831BD1AAD1004327C4 /* CourseResult.m in Sources */,
+				6B80552D1BD874F5002A1415 /* NoResult.m in Sources */,
 				6B9D0CF11BD8394600A1F565 /* NYAlertView.m in Sources */,
 				6B006F511BCAC82600D5CE25 /* Learner.m in Sources */,
 				6BB458841BC9C0B9007D6E0B /* InspirationViewController.m in Sources */,
 				227CC25C1BC9792200C31F8F /* AppDelegate.m in Sources */,
 				6BB458811BC9C096007D6E0B /* ComposePostViewController.m in Sources */,
+				6B9D0D0F1BD84F1D00A1F565 /* MeetUp_NoLocationTableViewCell.m in Sources */,
 				6B006F571BCAC84F00D5CE25 /* JournalEntry.m in Sources */,
 				6BB4587B1BC9BF55007D6E0B /* WelcomeViewController.m in Sources */,
 				6BB4587E1BC9C04F007D6E0B /* LearnerProfileViewController.m in Sources */,
+				6B9D0D111BD84F1D00A1F565 /* MeetUp_NoneFoundTableViewCell.m in Sources */,
 				5182392E1BD19DDA00F44326 /* NSString+NSString_Sanitize.m in Sources */,
 				227CC2651BC9792200C31F8F /* finalProject.xcdatamodeld in Sources */,
 				6BA37E401BD17AD00079CB96 /* MeetUpTableViewCell.m in Sources */,

@@ -10,12 +10,16 @@
 #import <AFNetworking/AFNetworking.h>
 #import "InspirationViewController.h"
 #import "VideoDetailViewController.h"
+#import "NYAlertViewController.h"
 #import "Learner.h"
 #import "CourseResult.h"
-#import "CourseTableViewCell.h"
 #import "MeetUpResult.h"
-#import "MeetUpTableViewCell.h"
 #import "VideoResult.h"
+#import "NoResult.h"
+#import "CourseTableViewCell.h"
+#import "MeetUpTableViewCell.h"
+#import "MeetUp_NoLocationTableViewCell.h"
+#import "MeetUp_NoneFoundTableViewCell.h"
 #import "VideoTableViewCell.h"
 #import "NSString+NSString_Sanitize.h"
 #import "Quotes.h"
@@ -32,8 +36,10 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 @property (weak, nonatomic) IBOutlet UITextField *refineSearchTextField;
 @property (weak, nonatomic) IBOutlet UILabel *quotesLabel;
 
-@property (nonatomic) NSMutableArray *results;
-
+@property (nonatomic) NSMutableArray *noResults;
+@property (nonatomic) BOOL meetupResultsFound;
+@property (nonatomic) BOOL courseraResultsFound;
+@property (nonatomic) BOOL youTubeResultsFound;
 @end
 
 @implementation InspirationViewController
@@ -68,8 +74,6 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     [self fetchYouTubeData];
     [self fetchCourseraData];
     [self fetchMeetupData];
-    
-    
     
 }
 
@@ -109,11 +113,15 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     
     //grab the nibs from the main bundle
     UINib *meetUpNib = [UINib nibWithNibName:@"MeetUpTableViewCell" bundle:nil];
+    UINib *meetUpNoLocationNib = [UINib nibWithNibName:@"MeetUp_NoLocationTableViewCell" bundle:nil];
+    UINib *meetUpNoneFoundNib = [UINib nibWithNibName:@"MeetUp_NoneFoundTableViewCell" bundle:nil];
     UINib *videoNib = [UINib nibWithNibName:@"VideoTableViewCell" bundle:nil];
     UINib *courseNib = [UINib nibWithNibName:@"CourseTableViewCell" bundle:nil];
     
     //register the nibs for the cell identifier
     [self.tableView registerNib:meetUpNib forCellReuseIdentifier:@"MeetUpCellIdentifier"];
+    [self.tableView registerNib:meetUpNoLocationNib forCellReuseIdentifier:@"MeetUpNoLocationCellIdentifier"];
+    [self.tableView registerNib:meetUpNoneFoundNib forCellReuseIdentifier:@"MeetUpNoneFoundCellIdentifier"];
     [self.tableView registerNib:videoNib forCellReuseIdentifier:@"VideoCellIdentifier"];
     [self.tableView registerNib:courseNib forCellReuseIdentifier:@"CourseCellIdentifier"];
     
@@ -155,6 +163,8 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
             
             [self createAlertWithTitle:@"Search Error" AndMessage:@"No videos found"];
             
+            
+            
         }else {
             
             self.videoSearchResults = [[NSMutableArray alloc] init];
@@ -195,6 +205,12 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
             
             [self createAlertWithTitle:@"Search Error" AndMessage:@"No meetups found"];
             
+            NoResult *noResult = [[NoResult alloc]init];
+            
+            [self.meetupSearchResults addObject:noResult];
+            
+            self.meetupResultsFound = NO;
+            
         }else {
             
             self.meetupSearchResults = [[NSMutableArray alloc] init];
@@ -204,6 +220,8 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
                 MeetUpResult *event = [[MeetUpResult alloc] initWithJSON:result];
                 
                 [self.meetupSearchResults addObject:event];
+                
+                self.meetupResultsFound = YES;
             }
             
             [self.tableView reloadData];
@@ -260,15 +278,38 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 #pragma mark - Alert Controller
 
 - (void) createAlertWithTitle:(NSString *)title AndMessage:(NSString *)message {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
-                                                                   message:message
-                                                            preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
+    NYAlertViewController *alertViewController = [[NYAlertViewController alloc] initWithNibName:nil bundle:nil];
     
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    // Set a title and message
+    alertViewController.title = title;
+    alertViewController.message = message;
+    
+    
+    // Customize appearance as desired
+    alertViewController.buttonCornerRadius = 20.0f;
+    alertViewController.view.tintColor = self.view.tintColor;
+    
+    alertViewController.titleFont = [UIFont fontWithName:@"TikalSansMedium" size:19.0f];
+    alertViewController.messageFont = [UIFont fontWithName:@"TikalSansMedium" size:16.0f];
+    alertViewController.buttonTitleFont = [UIFont fontWithName:@"TikalSansMedium" size:alertViewController.buttonTitleFont.pointSize];
+    alertViewController.cancelButtonTitleFont = [UIFont fontWithName:@"TikalSansMedium" size:alertViewController.cancelButtonTitleFont.pointSize];
+    
+    alertViewController.swipeDismissalGestureEnabled = YES;
+    alertViewController.backgroundTapDismissalGestureEnabled = YES;
+    
+    // Add alert actions
+    [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Ok", nil)
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(NYAlertAction *action) {
+                                                              
+                                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                                              
+                                                          }]];
+    
+    
+    // Present the alert view controller
+    [self presentViewController:alertViewController animated:YES completion:nil];
 }
 
 #pragma mark - Table View Delegate Methods
@@ -359,22 +400,42 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
         
     } else {
         
-        MeetUpTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MeetUpCellIdentifier" forIndexPath:indexPath];
-        
         MeetUpResult *event = self.meetupSearchResults[indexPath.row];
         
-        cell.eventNameLabel.text = event.eventName;
-        cell.groupNameLabel.text = event.groupName;
+        if (self.meetupResultsFound == NO){
+            
+            MeetUp_NoneFoundTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MeetUpNoneFoundCellIdentifier" forIndexPath:indexPath];
+            
+            return cell;
         
-        NSString *stringToSanitze = [event.eventDescription stringByStrippingHTML];
-        cell.descriptionLabel.text = stringToSanitze;
+        }else if (event.locationAddress == nil) {
+            
+            MeetUp_NoLocationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MeetUpNoLocationCellIdentifier" forIndexPath:indexPath];
+            
+            cell.eventNameLabel.text = event.eventName;
+            cell.groupNameLabel.text = event.groupName;
+            
+            NSString *stringToSanitze = [event.eventDescription stringByStrippingHTML];
+            cell.descriptionLabel.text = stringToSanitze;
+            
+            return cell;
+            
+        }else {
+            
+             MeetUpTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MeetUpCellIdentifier" forIndexPath:indexPath];
+            
+            cell.eventNameLabel.text = event.eventName;
+            cell.groupNameLabel.text = event.groupName;
+            
+            NSString *stringToSanitze = [event.eventDescription stringByStrippingHTML];
+            cell.descriptionLabel.text = stringToSanitze;
+            
+            cell.locationNameLabel.text = event.locationName;
+            cell.locationAddressLabel.text = event.locationAddress;
+            
+            return cell;
+        }
         
-        cell.locationNameLabel.text = event.locationName;
-        cell.locationAddressLabel.text = event.locationAddress;
-        
-        
-       
-        return cell;
     }
 }
 
@@ -409,10 +470,9 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 }
 
 - (IBAction)refineSearchButtonTapped:(UIButton *)sender {
-        
-        self.refineSearchTextField.hidden = NO;
+   
+    self.refineSearchTextField.hidden = NO;
+
 }
-
-
 
 @end

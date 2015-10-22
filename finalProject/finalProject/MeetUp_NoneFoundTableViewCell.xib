@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="TikalSans-Medium.otf">
+            <string>TikalSansMedium</string>
+            <string>TikalSansMedium</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeetUpNoneFoundCellIdentifier" rowHeight="572" id="fpp-iv-4QX" customClass="MeetUp_NoneFoundTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="442" height="572"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fpp-iv-4QX" id="0Sh-Oj-jOF">
+                <rect key="frame" x="0.0" y="0.0" width="442" height="571"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boo. No Meetups found." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Q5-eT-DpJ">
+                        <rect key="frame" x="20" y="40" width="402" height="20"/>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="20"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Want to start one?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Iw-5q-j6r">
+                        <rect key="frame" x="20" y="80" width="402" height="25"/>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="25"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpH-Kr-4GX">
+                        <rect key="frame" x="0.0" y="113" width="442" height="458"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="458" id="gh9-3W-5yg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5Q5-eT-DpJ" firstAttribute="top" secondItem="0Sh-Oj-jOF" secondAttribute="top" constant="40" id="0Hn-be-11j"/>
+                    <constraint firstAttribute="bottom" secondItem="NpH-Kr-4GX" secondAttribute="bottom" id="14p-aE-2Oe"/>
+                    <constraint firstItem="NpH-Kr-4GX" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" id="1wl-kF-cv3"/>
+                    <constraint firstItem="5Q5-eT-DpJ" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="F8l-Aa-0HJ"/>
+                    <constraint firstAttribute="bottom" secondItem="5Q5-eT-DpJ" secondAttribute="bottom" constant="20" id="VPe-oG-Sur"/>
+                    <constraint firstAttribute="trailing" secondItem="3Iw-5q-j6r" secondAttribute="trailing" constant="20" id="bRC-ko-IsN"/>
+                    <constraint firstAttribute="trailing" secondItem="NpH-Kr-4GX" secondAttribute="trailing" id="jTw-Qr-aJh"/>
+                    <constraint firstItem="5Q5-eT-DpJ" firstAttribute="top" secondItem="0Sh-Oj-jOF" secondAttribute="top" constant="32" id="jV1-es-rDV"/>
+                    <constraint firstItem="3Iw-5q-j6r" firstAttribute="leading" secondItem="0Sh-Oj-jOF" secondAttribute="leading" constant="20" id="r6q-TS-J2t"/>
+                    <constraint firstItem="3Iw-5q-j6r" firstAttribute="top" secondItem="5Q5-eT-DpJ" secondAttribute="bottom" constant="20" id="tJB-nv-Pu8"/>
+                    <constraint firstItem="NpH-Kr-4GX" firstAttribute="top" secondItem="3Iw-5q-j6r" secondAttribute="bottom" constant="8" id="u8m-UC-C51"/>
+                    <constraint firstAttribute="trailing" secondItem="5Q5-eT-DpJ" secondAttribute="trailing" constant="20" id="vTc-bd-8sE"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="VPe-oG-Sur"/>
+                        <exclude reference="jV1-es-rDV"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="eventNameLabel" destination="5Q5-eT-DpJ" id="IuJ-Iw-MJZ"/>
+                <outlet property="noMeetupsFoundLabel" destination="5Q5-eT-DpJ" id="APv-9q-hqk"/>
+                <outlet property="placeholderView" destination="NpH-Kr-4GX" id="WKl-zQ-I5d"/>
+                <outlet property="startOneLabel" destination="3Iw-5q-j6r" id="qNX-nI-cNt"/>
+            </connections>
+            <point key="canvasLocation" x="322" y="306"/>
+        </tableViewCell>
+    </objects>
+</document>

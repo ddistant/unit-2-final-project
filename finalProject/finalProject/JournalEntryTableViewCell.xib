@@ -19,20 +19,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j0m-By-TbH">
-                        <rect key="frame" x="8" y="8" width="288" height="382"/>
+                        <rect key="frame" x="8" y="8" width="288" height="384"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="384" id="Wcv-yE-aBj"/>
-                            <constraint firstAttribute="height" constant="382" id="juD-Ys-XQp"/>
+                            <constraint firstAttribute="height" constant="384" id="1Hh-tg-SEn"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Wcv-yE-aBj"/>
-                            </mask>
-                        </variation>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="az5-is-wrx">
-                        <rect key="frame" x="8" y="398" width="288" height="14"/>
-                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="12"/>
+                        <rect key="frame" x="8" y="400" width="288" height="12"/>
+                        <fontDescription key="fontDescription" name="TikalSansMedium" family="Tikal Sans " pointSize="15"/>
                         <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>

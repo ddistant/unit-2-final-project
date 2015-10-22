@@ -7,6 +7,7 @@
 //
 
 #import "LearnerProfileViewController.h"
+#import "JournalEntryTextOnlyTableViewCell.h"
 #import "JournalEntryTableViewCell.h"
 #import "JournalEntryHeaderView.h"
 #import "ColorData.h"
@@ -26,8 +27,6 @@ UINavigationControllerDelegate
 @property (weak, nonatomic) IBOutlet UILabel *learnerSkillLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) UIImagePickerController *imagePicker;
-
-@property (nonatomic) JournalEntryTableViewCell *testCell;
 
 @end
 
@@ -222,9 +221,11 @@ UINavigationControllerDelegate
     self.tableView.estimatedRowHeight = 100;
     self.tableView.backgroundColor = [ColorData sharedModel].icicleGry;
     
+    UINib *journalEntryTextOnlyNib = [UINib nibWithNibName:@"JournalEntryTextOnlyTableViewCell" bundle:nil];
     UINib *journalEntryNib = [UINib nibWithNibName:@"JournalEntryTableViewCell" bundle:nil];
     UINib *journalEntryHeader = [UINib nibWithNibName:@"JournalEntryHeaderView" bundle:nil];
     
+    [self.tableView registerNib:journalEntryTextOnlyNib forCellReuseIdentifier:@"JournalEntryTextOnlyCellIdentifier"];
     [self.tableView registerNib: journalEntryNib forCellReuseIdentifier:@"JournalEntryCellIdentifier"];
     [self.tableView registerNib:journalEntryHeader forHeaderFooterViewReuseIdentifier:@"JournalEntryHeaderIdentifier"];
     
@@ -232,24 +233,6 @@ UINavigationControllerDelegate
 }
 
 #pragma mark - tableView data source methods
-
-//- (void)configureCell:(JournalEntryTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-//    
-//    JournalEntry *journalEntry = self.learner.journalEntries[indexPath.section];
-//    
-//    //cell.journalEntryLabel.text = journalEntry.entryText;
-//    
-//}
-//
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    //[self configureCell:self.testCell atIndexPath:indexPath];
-//    //[self.testCell layoutSubviews];
-//    
-//    CGFloat height = [self.testCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-//    
-//    return height + 1;
-//}
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -272,42 +255,33 @@ UINavigationControllerDelegate
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    JournalEntryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JournalEntryCellIdentifier" forIndexPath:indexPath];
-    
-    if (self.learner.journalEntries.count){
-    
     JournalEntry *journalEntry = self.learner.journalEntries[indexPath.section];
     
-    
-    if (journalEntry.entryText != nil) {
+    if (journalEntry.entryPhoto) {
         
-        cell.journalEntryLabel.text = journalEntry.entryText;
-        
-    }
-    
-    if (journalEntry.entryPhoto != nil) {
+        JournalEntryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JournalEntryCellIdentifier" forIndexPath:indexPath];
         
         [journalEntry.entryPhoto getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             
             if (!error) {
                 
                 cell.journalEntryImageView.image = [UIImage imageWithData:data];
+                cell.journalEntryLabel.text = journalEntry.entryText;
             }
         }];
         
+        return cell;
         
     }else {
         
-        [self.view addSubview:cell.journalEntryImageView];
-        //[self.view addSubview:cell.journalEntryLabel];
+        JournalEntryTextOnlyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JournalEntryTextOnlyCellIdentifier" forIndexPath:indexPath];
         
-        cell.journalEntryImageView.frame = CGRectZero;
-        //[cell.journalEntryLabel sizeToFit];
+        cell.journalEntryTextLabel.text = journalEntry.entryText;
+
         
-    }
+        return cell;
     }
     
-    return cell;
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -318,12 +292,12 @@ UINavigationControllerDelegate
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        PFObject *objectToDel = [self.learner.journalEntries objectAtIndex:indexPath.row];
+        PFObject *objectToDel = [self.learner.journalEntries objectAtIndex:indexPath.section];
         
         [tableView beginUpdates];
         
-        [self.learner.journalEntries removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.learner.journalEntries removeObjectAtIndex:indexPath.section];
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
         // Section is now completely empty, so delete the entire section.
         [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section]

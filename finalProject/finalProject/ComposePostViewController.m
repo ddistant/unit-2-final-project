@@ -7,6 +7,7 @@
 //
 
 #import "ComposePostViewController.h"
+#import "NYAlertViewController.h"
 #import "ColorData.h"
 
 @interface ComposePostViewController () <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -74,24 +75,56 @@
 
 
 - (IBAction)addPhotoButtonTapped:(id)sender {
-    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message: nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:@"Take photo" style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction * action) {}];
+    NYAlertViewController *alertViewController = [[NYAlertViewController alloc] initWithNibName:nil bundle:nil];
     
-    UIAlertAction *choosePhoto = [UIAlertAction actionWithTitle:@"Choose photo" style:UIAlertActionStyleDefault
-                                                        handler:^(UIAlertAction * action) {
-                                                            
-                                                            [self choosePhoto];
-                                                        }];
+    // Set a title and message
+    alertViewController.title = nil;
+    alertViewController.message = nil;
     
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
-                                                   handler:^(UIAlertAction * action) {}];
     
-    [actionSheet addAction:takePhoto];
-    [actionSheet addAction:choosePhoto];
-    [actionSheet addAction:cancel];
-    [self presentViewController:actionSheet animated:YES completion:nil];
+    // Customize appearance as desired
+    alertViewController.buttonCornerRadius = 20.0f;
+    alertViewController.view.tintColor = self.view.tintColor;
+    
+    alertViewController.titleFont = [UIFont fontWithName:@"TikalSansMedium" size:19.0f];
+    alertViewController.messageFont = [UIFont fontWithName:@"TikalSansMedium" size:16.0f];
+    alertViewController.buttonTitleFont = [UIFont fontWithName:@"TikalSansMedium" size:alertViewController.buttonTitleFont.pointSize];
+    alertViewController.cancelButtonTitleFont = [UIFont fontWithName:@"TikalSansMedium" size:alertViewController.cancelButtonTitleFont.pointSize];
+    
+    alertViewController.swipeDismissalGestureEnabled = YES;
+    alertViewController.backgroundTapDismissalGestureEnabled = YES;
+    
+    // Add alert actions
+    [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Take Photo", nil)
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(NYAlertAction *action) {
+                                                              
+                                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                                              [self takePhoto];
+                                                              
+                                                          }]];
+    
+    [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Choose Photo", nil)
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(NYAlertAction *action) {
+                                                              
+                                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                                              [self choosePhoto];
+                                                              
+                                                          }]];
+    
+    [alertViewController addAction:[NYAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil)
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(NYAlertAction *action) {
+                                                              
+                                                              [self dismissViewControllerAnimated:YES completion:nil];
+                                                              
+                                                          }]];
+    
+    
+    // Present the alert view controller
+    [self presentViewController:alertViewController animated:YES completion:nil];
  
 }
 
@@ -102,15 +135,22 @@
 
 - (IBAction)saveButtonTapped:(id)sender {
     
-    if (self.photoImageView.image != nil  && ![self.titleTextField.text isEqualToString:@""] && ![self.textView.text isEqualToString:@""]){
+    NSString *skill = [[NSUserDefaults standardUserDefaults] objectForKey:LearnerSkillKey];
+    NSString *placeholder = [NSString stringWithFormat: @"How is your learning process going?\n\nWhat do you hope to accomplish today?\n\nWhat %@ lessons have been helpful?\n\nWhat are some of your challenges?", skill];
+    
+    if (![self.textView.text isEqualToString:placeholder]){
         
         JournalEntry *post = [[JournalEntry alloc] init];
         post.entryTimestamp = [NSDate date];
         post.entryTitle = self.titleTextField.text;
         post.entryText = self.textView.text;
         
-        NSData *imageData = UIImageJPEGRepresentation(self.photoImageView.image, 0.5f);
-        post.entryPhoto = [PFFile fileWithData:imageData];
+        if (self.photoImageView.image != nil) {
+            
+            NSData *imageData = UIImageJPEGRepresentation(self.photoImageView.image, 0.5f);
+            post.entryPhoto = [PFFile fileWithData:imageData];
+            
+        }
         
         [post saveInBackground];
         
