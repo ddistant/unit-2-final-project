@@ -10,7 +10,7 @@
 #import "NYAlertViewController.h"
 #import "ColorData.h"
 
-@interface ComposePostViewController () <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ComposePostViewController () <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (nonatomic) IBOutlet UITextView *textView;
@@ -45,6 +45,9 @@
 -(void)setUpUI{
     
     self.titleTextField.font = [UIFont fontWithName:@"TikalSansMedium" size:15];
+    self.titleTextField.layer.borderColor = [UIColor colorWithRed:41/255.0 green:115/255.0 blue:115/255.0 alpha:1].CGColor;
+    self.titleTextField.layer.borderWidth = 2.0;
+    
     self.textView.font = [UIFont fontWithName:@"TikalSansMedium" size:15];
 
     [self.saveButton.titleLabel setFont: [UIFont fontWithName:@"TikalSansMedium" size:20]];
@@ -196,6 +199,14 @@
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UITextFieldDelegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    [textField endEditing:YES];
+    return NO;
 }
 
 @end

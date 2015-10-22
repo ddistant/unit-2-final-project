@@ -68,6 +68,8 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.refineSearchButton.hidden = YES;
+    
     [self setUpTableView];
     [self setUpCustomTableViewCells];
     

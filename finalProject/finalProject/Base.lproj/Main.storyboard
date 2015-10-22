@@ -138,8 +138,8 @@
                                                 <segue destination="NqH-V7-Zkc" kind="presentation" id="TGW-ui-cYc"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akk-Gl-skN">
-                                            <rect key="frame" x="57" y="35" width="486" height="77"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akk-Gl-skN">
+                                            <rect key="frame" x="57" y="35" width="486" height="115"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -176,6 +176,7 @@
                                         <constraint firstItem="lba-Wn-Gib" firstAttribute="leading" secondItem="7Tg-ZP-oYY" secondAttribute="leading" constant="20" id="r8h-mM-HhR"/>
                                         <constraint firstItem="lba-Wn-Gib" firstAttribute="top" secondItem="akk-Gl-skN" secondAttribute="bottom" constant="8" id="ths-bn-oPA"/>
                                         <constraint firstAttribute="trailing" secondItem="eCs-fD-UVx" secondAttribute="trailing" constant="12" id="vDu-3P-PJd"/>
+                                        <constraint firstItem="NAO-jc-gct" firstAttribute="top" secondItem="akk-Gl-skN" secondAttribute="bottom" constant="8" id="vcZ-DI-NMT"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -184,6 +185,7 @@
                                             <exclude reference="qCK-7K-76A"/>
                                             <exclude reference="1pl-L5-lMt"/>
                                             <exclude reference="IFK-pR-xeU"/>
+                                            <exclude reference="ths-bn-oPA"/>
                                             <exclude reference="YWq-hP-lPL"/>
                                             <exclude reference="fvJ-b2-KGJ"/>
                                         </mask>
@@ -333,7 +335,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWv-Iw-gdW">
                                 <rect key="frame" x="20" y="108" width="560" height="262"/>
-                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="262" id="uim-tn-p4B"/>
                                 </constraints>
@@ -684,6 +686,6 @@
         <image name="school_logo_icon" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HiH-xw-dnC"/>
+        <segue reference="TGW-ui-cYc"/>
     </inferredMetricsTieBreakers>
 </document>
