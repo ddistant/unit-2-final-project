@@ -209,8 +209,16 @@ UINavigationControllerDelegate
         
         self.learner.learnerName = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
         self.learnerUsernameLabel.text = self.learner.learnerName;
-    
     }
+    
+    
+    if (([[NSUserDefaults standardUserDefaults] objectForKey:@"userPhoto"] == nil)) {
+        self.learnerProfileImageView.image = [UIImage imageNamed:@"avatar_icon"];
+    } else {
+        NSData *imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"userPhoto"];
+        self.learnerProfileImageView.image = [UIImage imageWithData:imageData];
+    }
+    
 }
 
 #pragma mark - custom table view cells
@@ -378,6 +386,8 @@ UINavigationControllerDelegate
     picker = _imagePicker;
     UIImage *imageChosen = info[UIImagePickerControllerOriginalImage];
     self.learnerProfileImageView.image = imageChosen;
+    [[NSUserDefaults standardUserDefaults] setObject:UIImagePNGRepresentation(imageChosen) forKey:@"userPhoto"];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

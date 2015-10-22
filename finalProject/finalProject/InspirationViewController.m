@@ -471,7 +471,11 @@ const NSString *YouTubeAPIKey = @"AIzaSyDWWRZm36qjmntxljA2-MjDlEdLAPVSrJk";
 
 - (IBAction)refineSearchButtonTapped:(UIButton *)sender {
    
-    self.refineSearchTextField.hidden = NO;
+    if ([self.refineSearchTextField isHidden]) {
+        self.refineSearchTextField.hidden = NO;
+    } else {
+        self.refineSearchTextField.hidden = YES;
+    }
 
 }
 

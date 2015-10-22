@@ -12,7 +12,7 @@
 #import "Learner.h"
 #import "ColorData.h"
 
-@interface WelcomeViewController ()
+@interface WelcomeViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
@@ -65,5 +65,4 @@
     
     [self presentViewController:tabBarController animated:YES completion:nil];
 }
-
 @end

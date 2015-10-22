@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *cameraIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (nonatomic) JournalEntry *post;
 
 @end
 
@@ -140,19 +141,19 @@
     
     if (![self.textView.text isEqualToString:placeholder]){
         
-        JournalEntry *post = [[JournalEntry alloc] init];
-        post.entryTimestamp = [NSDate date];
-        post.entryTitle = self.titleTextField.text;
-        post.entryText = self.textView.text;
+        self.post = [[JournalEntry alloc] init];
+        self.post.entryTimestamp = [NSDate date];
+        self.post.entryTitle = self.titleTextField.text;
+        self.post.entryText = self.textView.text;
         
         if (self.photoImageView.image != nil) {
             
             NSData *imageData = UIImageJPEGRepresentation(self.photoImageView.image, 0.5f);
-            post.entryPhoto = [PFFile fileWithData:imageData];
+            self.post.entryPhoto = [PFFile fileWithData:imageData];
             
         }
         
-        [post saveInBackground];
+        [self.post saveInBackground];
         
         [self dismissViewControllerAnimated:YES completion:nil];
         
